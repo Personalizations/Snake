@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
-  <component name="GithubDefaultAccount">
-    <option name="defaultAccountId" value="e46fc5e4-73cd-4a92-9a0f-e1654942d768" />
+  <component name="Black">
+    <option name="sdkName" value="Python 3.13 (Snake) (2)" />
   </component>
   <component name="KubernetesApiProvider"><![CDATA[{}]]></component>
   <component name="ProjectInspectionProfilesVisibleTreeState">
@@ -18,8 +18,5 @@
   <component name="ProjectRootManager" version="2" project-jdk-name="Python 3.13 (Snake) (2)" project-jdk-type="Python SDK" />
   <component name="PyDebuggerOptionsProvider">
     <option name="mySaveCallSignatures" value="true" />
-  </component>
-  <component name="VcsManagerConfiguration">
-    <option name="MARK_IGNORED_AS_EXCLUDED" value="true" />
   </component>
 </project>
