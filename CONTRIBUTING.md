@@ -39,7 +39,7 @@ Install the required Python package using pip:
 
 
 ```
-pip install pygame
+pip install -r requirements.txt
 ```
 
 ### Run the Application
