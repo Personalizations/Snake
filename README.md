@@ -18,16 +18,7 @@ A classic Snake game implementation using Python and Pygame library. Control the
 
 ## Installation
 
-1. Clone this repository:
-   ```
-   git clone https://github.com/Personalizations/Snake.git
-   cd snake
-   ```
-
-2. Install required dependencies:
-   ```
-   pip install pygame
-   ```
+See [CONTRIBUTING.md](./CONTRIBUTING.md) for more details.
 
 ## How to Play
 
