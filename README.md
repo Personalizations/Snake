@@ -52,9 +52,14 @@ See [CONTRIBUTING.md](./CONTRIBUTING.md) for more details.
 ## Project Structure
 
 ```
-snake-game-python/
+snake/
 ├── snake_game.py       # Main game file
 ├── assets/             # Game assets (images, sounds)
+├── Document/           # Other documents
+│   ├── README/         # The rest of the README
+│   │   ├── zh_cn.md    # Chinese
+│   │   ├── zh_tw.md    # Traditional Chinese
+│── LICENSE             # GPL-3.0 License
 ├── README.md           # This readme file
 ├── CONTRIBUTING.md     # This is the contribution file
 └── requirements.txt    # Project dependencies

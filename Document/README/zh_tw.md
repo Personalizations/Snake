@@ -49,12 +49,17 @@ python snake_game.py
 ## 專案結構
 
 ```
-snake-game-python/
-│── snake_game.py # 遊戲主文件
-│── assets/ # 遊戲資源（圖片、聲音）
-│── README.md # 本自述文件
-│── CONTRIBUTING.md # 本貢獻文件
-└── requirements.txt # 專案依賴項
+snake/
+│── snake_game.py       # 遊戲主文件
+│── assets/             # 遊戲資源（圖片、聲音）
+├── Document/           # 其餘文檔
+│   ├── README/         # 其餘 README 文檔
+│   │   ├── zh_cn.md    # 中文
+│   │   ├── zh_tw.md    # 繁体
+│── LICENSE             # GPL-3.0 許可證
+│── README.md           # 本自述文件
+│── CONTRIBUTING.md     # 本貢獻文件
+└── requirements.txt    # 專案依賴項
 ```
 
 ## 貢獻
