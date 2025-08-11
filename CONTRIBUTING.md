@@ -1,0 +1,119 @@
+# CONTRIBUTING
+
+Thank you for your interest in contributing to Snake! This document provides guidelines and instructions to help you set up your development environment and start contributing.
+
+## Development Setup
+
+Before you start contributing to the project, you need to set up your development environment. Here are the steps you need to follow:
+
+### Prerequisites
+
+
+
+1.  **Install Python**: Our project requires Python. Please follow the instructions provided [here](https://www.python.org/downloads/) to install it on your system.
+
+### Setup for All Users
+
+
+
+*   Make sure to add Python to your system's PATH. This option is usually available during the installation process, but you can verify and manually add it if necessary.
+
+*   Ensure that pip (Python package installer) is installed, which typically comes bundled with Python.
+
+### Clone the Repository
+
+First, clone the project repository to your local machine:
+
+
+
+```
+git clone https://github.com/Personalizations/Snake.git
+
+cd snake
+```
+
+### Install Dependencies
+
+Install the required Python package using pip:
+
+
+
+```
+pip install pygame
+```
+
+### Run the Application
+
+To start the development version of the application, use the following command:
+
+
+
+```
+python main.py
+
+\# Note: Replace "main.py" with the actual entry point file of the project if different
+```
+
+### Run Tests (if available)
+
+If the project includes tests, you can run them with:
+
+
+
+```
+python -m pytest
+
+\# Or use the specific test command if provided in the project
+```
+
+## Contributing Your Changes
+
+#### Before committing your changes
+
+It's recommended to check code style and quality before committing:
+
+
+
+1.  Code style formatting (if using tools like black):
+
+
+
+```
+\# Install black if not already installed
+
+pip install black
+
+\# Format the code
+
+black .
+```
+
+
+
+1.  Lint checking (if using tools like flake8):
+
+
+
+```
+\# Install flake8 if not already installed
+
+pip install flake8
+
+\# Run lint check
+
+flake8 .
+```
+
+Once you have made your changes:
+
+
+
+1.  Fork the repository.
+
+2.  Create a new branch for your feature or bug fix.
+
+3.  Commit your changes with clear and concise commit messages.
+
+4.  Push your branch to your fork and submit a pull request to our repository.
+
+We appreciate your contributions and look forward to your active participation in our project!
