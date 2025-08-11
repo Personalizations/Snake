@@ -53,6 +53,7 @@ snake-game-python/
 ├── snake_game.py       # Main game file
 ├── assets/             # Game assets (images, sounds)
 ├── README.md           # This readme file
+├── CONTRIBUTING.md     # This is the contribution file
 └── requirements.txt    # Project dependencies
 ```
 
