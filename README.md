@@ -1,5 +1,5 @@
-[简体中文](./Document/README/zh_cn.md)。
-[繁体中文](./Document/README/zh_tw.md)。
+[简体中文](./Document/README/zh_cn.md)
+[繁体中文](./Document/README/zh_tw.md)
 
 # Snake Game in Python
 
