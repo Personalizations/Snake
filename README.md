@@ -1,3 +1,6 @@
+[简体中文](./Document/README/zh_cn.md)。
+[繁体中文](./Document/README/zh_tw.md)。
+
 # Snake Game in Python
 
 A classic Snake game implementation using Python and Pygame library. Control the snake to eat food, grow longer, and avoid collisions with the walls or itself.
