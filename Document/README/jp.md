@@ -53,9 +53,10 @@ snake/
 │── snake_game.py      # メインゲームファイル
 │── assets/            # ゲームリソース (画像、サウンド)
 ├── Document/          # その他のドキュメント
-│ ├── README/          # その他の README ドキュメント
-│ │ ├── zh_cn.md       # 中国語
-│ │ ├── zh_tw.md       # 中国語 (繁体字)
+│  ├── README/          # その他の README ドキュメント
+│  │  ├── zh_cn.md       # 中国語
+│  │  ├── zh_tw.md       # 中国語 (繁体字)
+│  │  ├── jp.md          # 日本語
 │── LICENSE            # GPL-3.0 ライセンス
 │── README.md          # この Readme ファイル
 │── CONTRIBUTING.md    # この貢献ファイル

@@ -57,9 +57,10 @@ snake/
 ├── snake_game.py       # Main game file
 ├── assets/             # Game assets (images, sounds)
 ├── Document/           # Other documents
-│   ├── README/         # The rest of the README
-│   │   ├── zh_cn.md    # Chinese
-│   │   ├── zh_tw.md    # Traditional Chinese
+│  ├── README/         # The rest of the README
+│  │  ├── zh_cn.md    # Chinese
+│  │  ├── zh_tw.md    # Traditional Chinese
+│  │  ├── jp.md       # Japanese
 │── LICENSE             # GPL-3.0 License
 ├── README.md           # This readme file
 ├── CONTRIBUTING.md     # This is the contribution file
