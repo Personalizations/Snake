@@ -50,17 +50,29 @@ python snake_game.py
 
 ```
 snake/
-│── snake_game.py      # メインゲームファイル
-│── assets/            # ゲームリソース (画像、サウンド)
-├── Document/          # その他のドキュメント
-│  ├── README/         # その他の README ドキュメント
-│  │  ├── zh_cn.md     # 中国語
-│  │  ├── zh_tw.md     # 中国語 (繁体字)
-│  │  ├── jp.md        # 日本語
-│── LICENSE            # GPL-3.0 ライセンス
-│── README.md          # この Readme ファイル
-│── CONTRIBUTING.md    # この貢献ファイル
-└── requirements.txt   # プロジェクトの依存関係
+├── snake_game.py       # ゲームのメインファイル
+├── assets/             # ゲームアセット（画像、音声）
+├── Document/           # ドキュメントディレクトリ
+│  ├── README/          # 多言語のREADME文書
+│  │  ├── zh_cn.md      # 簡体字中国語のREADME
+│  │  ├── zh_tw.md      # 繁体字中国語のREADME
+│  │  └── jp.md         # 日本語のREADME
+│  └── CONTRIBUTING/    # 多言語の貢献ガイドライン
+│     ├── zh_cn.md      # 簡体字中国語の貢献ガイドライン
+│     ├── zh_tw.md      # 繁体字中国語の貢献ガイドライン
+│     └── jp.md         # 日本語の貢献ガイドライン
+├── LICENSE             # GPL-3.0 ライセンス
+├── README.md           # メインのREADMEファイル（英語）
+├── CONTRIBUTING.md     # メインの貢献ガイドラインファイル（英語）
+├── requirements.txt    # プロジェクトの依存関係
+└── .idea/              # IDEの設定ファイル
+    ├── vcs.xml         # バージョン管理の設定
+    ├── modules.xml     # モジュールの設定
+    ├── .gitignore      # IDE固有の無視ファイル
+    ├── jsLibraryMappings.xml  # JavaScriptライブラリのマッピング
+    ├── inspectionProfiles/    # 検査設定ファイル
+    │  └── Project_Default.xml # デフォルトのプロジェクト検査設定
+    └── misc.xml        # その他の雑多な設定
 ```
 
 ## 貢献

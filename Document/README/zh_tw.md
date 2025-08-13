@@ -50,17 +50,29 @@ python snake_game.py
 
 ```
 snake/
-│── snake_game.py       # 遊戲主文件
-│── assets/             # 遊戲資源（圖片、聲音）
-├── Document/           # 其餘文檔
-│  ├── README/          # 其餘 README 文檔
-│  │  ├── zh_cn.md      # 中文
-│  │  ├── zh_tw.md      # 繁体
-│  │  ├── jp.md         # 日語
-│── LICENSE             # GPL-3.0 許可證
-│── README.md           # 本自述文件
-│── CONTRIBUTING.md     # 本貢獻文件
-└── requirements.txt    # 專案依賴項
+├── snake_game.py       # 遊戲主檔案
+├── assets/             # 遊戲資源（圖片、聲音）
+├── Document/           # 文件目錄
+│  ├── README/          # 多語言README文件
+│  │  ├── zh_cn.md      # 簡體中文README
+│  │  ├── zh_tw.md      # 繁體中文README
+│  │  └── jp.md         # 日語README
+│  └── CONTRIBUTING/    # 多語言貢獻指南
+│     ├── zh_cn.md      # 簡體中文貢獻指南
+│     ├── zh_tw.md      # 繁體中文貢獻指南
+│     └── jp.md         # 日語貢獻指南
+├── LICENSE             # GPL-3.0 許可證
+├── README.md           # 主README檔案（英文）
+├── CONTRIBUTING.md     # 主貢獻指南檔案（英文）
+├── requirements.txt    # 專案依賴項
+└── .idea/              # IDE配置檔案
+    ├── vcs.xml         # 版本控制配置
+    ├── modules.xml     # 模組配置
+    ├── .gitignore      # IDE特定忽略檔案
+    ├── jsLibraryMappings.xml  # JavaScript庫映射
+    ├── inspectionProfiles/    # 檢查配置檔案
+    │  └── Project_Default.xml # 預設專案檢查配置
+    └── misc.xml        # 其他雜項配置
 ```
 
 ## 貢獻

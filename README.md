@@ -56,15 +56,27 @@ See [CONTRIBUTING.md](./CONTRIBUTING.md) for more details.
 snake/
 ├── snake_game.py       # Main game file
 ├── assets/             # Game assets (images, sounds)
-├── Document/           # Other documents
-│  ├── README/          # The rest of the README
-│  │  ├── zh_cn.md      # Chinese
-│  │  ├── zh_tw.md      # Traditional Chinese
-│  │  ├── jp.md         # Japanese
-│── LICENSE             # GPL-3.0 License
-├── README.md           # This readme file
-├── CONTRIBUTING.md     # This is the contribution file
-└── requirements.txt    # Project dependencies
+├── Document/           # Documentation directory
+│  ├── README/          # Multi-language README documents
+│  │  ├── zh_cn.md      # Simplified Chinese README
+│  │  ├── zh_tw.md      # Traditional Chinese README
+│  │  └── jp.md         # Japanese README
+│  └── CONTRIBUTING/    # MultiMulti-language contribution guidelines
+│     ├── zh_cn.md      # Simplified Chinese contribution guidelines
+│     ├── zh_tw.md      # Traditional Chinese contribution guidelines
+│     └── jp.md         # Japanese contribution guidelines
+├── LICENSE             # GPL-3.0 License
+├── README.md           # Main README file (English)
+├── CONTRIBUTING.md     # Main contribution guidelines file (English)
+├── requirements.txt    # Project dependencies
+└── .idea/              # IDE configuration files
+    ├── vcs.xml         # Version control configuration
+    ├── modules.xml     # Module configuration
+    ├── .gitignore      # IDE-specific ignore file
+    ├── jsLibraryMappings.xml  # JavaScript library mappings
+    ├── inspectionProfiles/    # Inspection configuration files
+    │  └── Project_Default.xml # Default project inspection configuration
+    └── misc.xml        # Other miscellaneous configurations
 ```
 
 ## Contributing
