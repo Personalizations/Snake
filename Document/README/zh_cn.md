@@ -75,7 +75,7 @@ snake/
 
 ## 许可证
 
-本项目遵循 GPL-3.0 许可证 - 详情请参阅[License here](./LICENSE)
+本项目遵循 GPL-3.0 许可证 - 详情请参阅[License here](../../LICENSE)
 
 ## 致谢
 

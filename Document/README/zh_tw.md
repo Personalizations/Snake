@@ -75,7 +75,7 @@ snake/
 
 ## 許可證
 
-本項目遵循 GPL-3.0 許可證 - 詳情請參閱[License here](./LICENSE)
+本項目遵循 GPL-3.0 許可證 - 詳情請參閱[License here](../../LICENSE)
 
 ## 致謝
 
