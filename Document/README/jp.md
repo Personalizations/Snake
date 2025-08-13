@@ -18,7 +18,7 @@ Python と Pygame ライブラリを使って実装された、古典的なス�
 
 ## インストール
 
-詳細は [CONTRIBUTING.md](./CONTRIBUTING.md) をご覧ください。
+詳細は [CONTRIBUTING.md](./Document/CONTRIBUTING/jp.md) をご覧ください。
 
 ## ゲームプレイ
 

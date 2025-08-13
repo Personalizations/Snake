@@ -18,7 +18,7 @@
 
 ## 安裝
 
-更多詳情，請參閱 [CONTRIBUTING.md](./CONTRIBUTING.md)。
+更多詳情，請參閱 [CONTRIBUTING.md](./Document/CONTRIBUTING/zh_tw.md)。
 
 ## 遊戲玩法
 
