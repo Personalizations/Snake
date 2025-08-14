@@ -50,8 +50,6 @@ To start the development version of the application, use the following command:
 
 ```
 python main.py
-
-\# Note: Replace "main.py" with the actual entry point file of the project if different
 ```
 
 ### Run Tests (if available)

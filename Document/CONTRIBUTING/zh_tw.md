@@ -40,8 +40,6 @@ pip install -r requirements.txt
 
 ```
 python main.py
-
-\# 注意：如果「main.py」與專案的實際入口文件不同，請將其替換為專案的實際入口文件
 ```
 
 ### 執行測試（如果有）

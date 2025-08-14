@@ -40,8 +40,6 @@ pip install -r requirements.txt
 
 ```
 python main.py
-
-\# 注: 「main.py」は、プロジェクトの実際のエントリポイントファイルと異なる場合は、置き換えてください。
 ```
 
 ### テストの実行（使用可能な場合）

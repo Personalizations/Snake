@@ -41,7 +41,6 @@ pip install -r requirements.txt
 ```
 python main.py
 
-\# 注意：如果“main.py”与项目的实际入口文件不同，请将其替换为项目的实际入口文件
 ```
 
 ### 运行测试（如果有）
