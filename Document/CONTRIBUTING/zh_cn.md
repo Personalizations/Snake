@@ -8,7 +8,7 @@
 
 ### 先决条件
 
-1. **安装 Python**：我们的项目需要 Python。请按照[此处](https://www.python.org/downloads/) 提供的说明将其安装到您的系统上。
+**安装 Python**：我们的项目需要 Python。请按照[此处](https://www.python.org/downloads/) 提供的说明将其安装到您的系统上。
 
 ### 所有用户设置
 

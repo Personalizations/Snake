@@ -9,8 +9,7 @@ Before you start contributing to the project, you need to set up your developmen
 ### Prerequisites
 
 
-
-1.  **Install Python**: Our project requires Python. Please follow the instructions provided [here](https://www.python.org/downloads/) to install it on your system.
+**Install Python**: Our project requires Python. Please follow the instructions provided [here](https://www.python.org/downloads/) to install it on your system.
 
 ### Setup for All Users
 
