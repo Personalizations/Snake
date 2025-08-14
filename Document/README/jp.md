@@ -64,6 +64,7 @@ snake/
 ├── LICENSE             # GPL-3.0 ライセンス
 ├── README.md           # メインのREADMEファイル（英語）
 ├── CONTRIBUTING.md     # メインの貢献ガイドラインファイル（英語）
+├── Changelog.md        # ログファイルの更新
 ├── requirements.txt    # プロジェクトの依存関係
 └── .idea/              # IDEの設定ファイル
     ├── vcs.xml         # バージョン管理の設定

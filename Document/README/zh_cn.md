@@ -64,6 +64,7 @@ snake/
 ├── LICENSE             # GPL-3.0 许可证
 ├── README.md           # 主README文件（英文）
 ├── CONTRIBUTING.md     # 主贡献指南文件（英文）
+├── Changelog.md        # 更新日志文件
 ├── requirements.txt    # 项目依赖项
 └── .idea/              # IDE配置文件
     ├── vcs.xml         # 版本控制配置
