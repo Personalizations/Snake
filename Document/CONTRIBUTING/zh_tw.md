@@ -42,16 +42,6 @@ pip install -r requirements.txt
 python main.py
 ```
 
-### 執行測試（如果有）
-
-如果項目包含測試，您可以使用以下命令執行它們：
-
-```
-python -m pytest
-
-\# 或者，如果專案中提供了特定的測試命令，請使用它
-```
-
 ## 貢獻您的更改
 
 #### 提交更改之前

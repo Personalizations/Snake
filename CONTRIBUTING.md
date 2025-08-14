@@ -52,18 +52,6 @@ To start the development version of the application, use the following command:
 python main.py
 ```
 
-### Run Tests (if available)
-
-If the project includes tests, you can run them with:
-
-
-
-```
-python -m pytest
-
-\# Or use the specific test command if provided in the project
-```
-
 ## Contributing Your Changes
 
 #### Before committing your changes
