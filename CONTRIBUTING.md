@@ -1,3 +1,7 @@
+[简体中文](./Document/CONTRIBUTING/zh_cn.md)
+[繁体中文](./Document/CONTRIBUTING/zh_tw.md)
+[日本語](./Document/CONTRIBUTING/jp.md)
+
 # CONTRIBUTING
 
 Thank you for your interest in contributing to Snake! This document provides guidelines and instructions to help you set up your development environment and start contributing.
