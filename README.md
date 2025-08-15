@@ -54,7 +54,6 @@ See [CONTRIBUTING.md](./CONTRIBUTING.md) for more details.
 
 ```
 snake/
-├── snake_game.py       # Main game file
 ├── assets/             # Game assets (images, sounds)
 ├── Document/           # Documentation directory
 │  ├── README/          # Multi-language README documents

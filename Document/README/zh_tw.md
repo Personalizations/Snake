@@ -50,7 +50,6 @@
 
 ```
 snake/
-├── snake_game.py       # 遊戲主檔案
 ├── assets/             # 遊戲資源（圖片、聲音）
 ├── Document/           # 文件目錄
 │  ├── README/          # 多語言README文件

@@ -50,7 +50,6 @@ Python と Pygame ライブラリを使って実装された、古典的なス�
 
 ```
 snake/
-├── snake_game.py       # ゲームのメインファイル
 ├── assets/             # ゲームアセット（画像、音声）
 ├── Document/           # ドキュメントディレクトリ
 │  ├── README/          # 多言語のREADME文書
