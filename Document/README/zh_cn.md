@@ -23,9 +23,9 @@
 ## 游戏玩法
 
 1. 运行游戏：
-```
-python snake_game.py
-```
+   ```
+   python snake_game.py
+   ```
 
 2. 使用方向键控制蛇的方向：
   - 向上键：向上移动
