@@ -66,6 +66,7 @@ snake/
 ├── CONTRIBUTING.md     # 主貢獻指南檔案（英文）
 ├── Changelog.md        # 更新日志文件
 ├── requirements.txt    # 專案依賴項
+├── main.py             # 主軟體
 └── .idea/              # IDE配置檔案
     ├── vcs.xml         # 版本控制配置
     ├── modules.xml     # 模組配置

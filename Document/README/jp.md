@@ -66,6 +66,7 @@ snake/
 ├── CONTRIBUTING.md     # メインの貢献ガイドラインファイル（英語）
 ├── Changelog.md        # ログファイルの更新
 ├── requirements.txt    # プロジェクトの依存関係
+├── main.py             # メインプログラム
 └── .idea/              # IDEの設定ファイル
     ├── vcs.xml         # バージョン管理の設定
     ├── modules.xml     # モジュールの設定

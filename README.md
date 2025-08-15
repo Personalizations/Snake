@@ -70,6 +70,7 @@ snake/
 ├── CONTRIBUTING.md     # Main contribution guidelines file (English)
 ├── Changelog.md        # Update log file
 ├── requirements.txt    # Project dependencies
+├── main.py             # Main program
 └── .idea/              # IDE configuration files
     ├── vcs.xml         # Version control configuration
     ├── modules.xml     # Module configuration
