@@ -50,7 +50,14 @@
 
 ```
 snake/
-├── Assets/             # 遊戲資源（圖片、聲音）
+├── Assets/             # 游戲資源
+│  ├── audio/           # 音頻
+│  │  └── test.txt      # 測試文件
+│  ├── background/      # 背景
+│  │  └── test.txt      # 測試文件
+│  ├── icon/            # 圖標
+│  │  └── test.txt      # 測試文件
+│  └── index.html       # 資源測試文件
 ├── Document/           # 文件目錄
 │  ├── README/          # 多語言README文件
 │  │  ├── zh_cn.md      # 簡體中文README

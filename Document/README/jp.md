@@ -50,7 +50,14 @@ Python と Pygame ライブラリを使って実装された、古典的なス�
 
 ```
 snake/
-├── Assets/             # ゲームアセット（画像、音声）
+├── Assets/             # ゲームアセット
+│  ├── audio/           # オーディオ
+│  │  └── test.txt      # テストファイル
+│  ├── background/      # 背景
+│  │  └── test.txt      # テストファイル
+│  ├── icon/            # アイコン
+│  │  └── test.txt      # テストファイル
+│  └── index.html       # リソーステストファイル
 ├── Document/           # ドキュメントディレクトリ
 │  ├── README/          # 多言語のREADME文書
 │  │  ├── zh_cn.md      # 簡体字中国語のREADME

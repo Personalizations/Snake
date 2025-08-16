@@ -54,7 +54,14 @@ See [CONTRIBUTING.md](./CONTRIBUTING.md) for more details.
 
 ```
 snake/
-├── Assets/             # Game assets (images, sounds)
+├── Assets/             # Game assets
+│  ├── audio/           # Audio
+│  │  └── test.txt      # Test File
+│  ├── background/      # Background
+│  │  └── test.txt      # Test File
+│  ├── icon/            # Icon
+│  │  └── test.txt      # Test File
+│  └── index.html       # Resource test file
 ├── Document/           # Documentation directory
 │  ├── README/          # Multi-language README documents
 │  │  ├── zh_cn.md      # Simplified Chinese README
