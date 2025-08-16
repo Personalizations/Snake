@@ -28,7 +28,7 @@ See [CONTRIBUTING.md](./CONTRIBUTING.md) for more details.
 
 1. Run the game:
    ```
-   python snake_game.py
+   python main.py
    ```
 
 2. Use arrow keys to control the snake's direction:

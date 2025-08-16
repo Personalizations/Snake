@@ -24,7 +24,7 @@ Python と Pygame ライブラリを使って実装された、古典的なス�
 
 1. ゲームを実行します:
    ```
-   python snake_game.py
+   python main.py
    ```
 
 2. 矢印キーを使ってヘビを操作します:

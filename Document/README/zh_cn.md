@@ -24,7 +24,7 @@
 
 1. 运行游戏：
    ```
-   python snake_game.py
+   python main.py
    ```
 
 2. 使用方向键控制蛇的方向：
