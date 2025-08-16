@@ -3,3 +3,4 @@ pip==25.2
 flake8==7.3.0
 black==25.1.0
 click==8.2.1
+colorama==0.4.6
