@@ -7,3 +7,4 @@ colorama==0.4.6
 mccabe==0.7.0
 mypy-extensions==1.1.0
 packaging==25.0
+pathspec==0.12.1
