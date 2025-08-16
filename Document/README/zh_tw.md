@@ -61,7 +61,7 @@ snake/
 │     ├── zh_tw.md      # 繁體中文貢獻指南
 │     └── jp.md         # 日語貢獻指南
 ├── README.md           # 主README檔案（英文）
-├── Changelog.md        # 更新日志文件
+├── CHANGELOG.md        # 更新日志文件
 ├── CONTRIBUTING.md     # 主貢獻指南檔案（英文）
 ├── LICENSE             # GPL-3.0 許可證
 ├── main.py             # 主軟體
