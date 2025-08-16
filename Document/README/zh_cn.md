@@ -50,7 +50,7 @@
 
 ```
 snake/
-├── assets/             # 游戏资源（图片、声音）
+├── Assets/             # 游戏资源（图片、声音）
 ├── Document/           # 文档目录
 │  ├── README/          # 多语言README文档
 │  │  ├── zh_cn.md      # 简体中文README
