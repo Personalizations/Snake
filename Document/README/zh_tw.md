@@ -60,12 +60,12 @@ snake/
 │     ├── zh_cn.md      # 簡體中文貢獻指南
 │     ├── zh_tw.md      # 繁體中文貢獻指南
 │     └── jp.md         # 日語貢獻指南
-├── LICENSE             # GPL-3.0 許可證
 ├── README.md           # 主README檔案（英文）
-├── CONTRIBUTING.md     # 主貢獻指南檔案（英文）
 ├── Changelog.md        # 更新日志文件
-├── requirements.txt    # 專案依賴項
+├── CONTRIBUTING.md     # 主貢獻指南檔案（英文）
+├── LICENSE             # GPL-3.0 許可證
 ├── main.py             # 主軟體
+├── requirements.txt    # 專案依賴項
 └── .idea/              # IDE配置檔案
     ├── vcs.xml         # 版本控制配置
     ├── modules.xml     # 模組配置

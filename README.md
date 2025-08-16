@@ -64,12 +64,12 @@ snake/
 │     ├── zh_cn.md      # Simplified Chinese contribution guidelines
 │     ├── zh_tw.md      # Traditional Chinese contribution guidelines
 │     └── jp.md         # Japanese contribution guidelines
-├── LICENSE             # GPL-3.0 License
 ├── README.md           # Main README file (English)
-├── CONTRIBUTING.md     # Main contribution guidelines file (English)
 ├── Changelog.md        # Update log file
-├── requirements.txt    # Project dependencies
+├── CONTRIBUTING.md     # Main contribution guidelines file (English)
+├── LICENSE             # GPL-3.0 License
 ├── main.py             # Main program
+├── requirements.txt    # Project dependencies
 └── .idea/              # IDE configuration files
     ├── vcs.xml         # Version control configuration
     ├── modules.xml     # Module configuration

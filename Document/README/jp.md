@@ -60,12 +60,12 @@ snake/
 │     ├── zh_cn.md      # 簡体字中国語の貢献ガイドライン
 │     ├── zh_tw.md      # 繁体字中国語の貢献ガイドライン
 │     └── jp.md         # 日本語の貢献ガイドライン
-├── LICENSE             # GPL-3.0 ライセンス
 ├── README.md           # メインのREADMEファイル（英語）
-├── CONTRIBUTING.md     # メインの貢献ガイドラインファイル（英語）
 ├── Changelog.md        # ログファイルの更新
-├── requirements.txt    # プロジェクトの依存関係
+├── CONTRIBUTING.md     # メインの貢献ガイドラインファイル（英語）
+├── LICENSE             # GPL-3.0 ライセンス
 ├── main.py             # メインプログラム
+├── requirements.txt    # プロジェクトの依存関係
 └── .idea/              # IDEの設定ファイル
     ├── vcs.xml         # バージョン管理の設定
     ├── modules.xml     # モジュールの設定
