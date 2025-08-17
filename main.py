@@ -76,8 +76,8 @@ def show_message(message, color, size, y_offset=0):
 
 
 def main():
-    """Main game function"""
-    global FPS  # Declare FPS as global to modify within function
+    """Main game Function"""
+    global FPS  # Declare FPS as global to modify within Function
     # Initialize snake position and direction
     snake = [(GRID_WIDTH // 2, GRID_HEIGHT // 2)]
     direction = RIGHT
