@@ -1,4 +1,4 @@
-# function/exit_game.py
+# Function/exit_game.py
 import sys
 import pygame
 

@@ -1,4 +1,4 @@
-# function/start_game.py
+# Function/start_game.py
 from main import main as start_snake_game
 
 def start_game():
