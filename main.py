@@ -1,5 +1,4 @@
 import pygame
-import sys
 import random
 from Function.start_game import start_game
 from Function.options import show_options
