@@ -1,8 +1,8 @@
 import pygame
 import random
-from Function.start_game import start_game
-from Function.options import show_options
-from Function.exit_game import exit_game
+from Function.home_menu.start_game import start_game
+from Function.home_menu.options import show_options
+from Function.home_menu.exit_game import exit_game
 
 # Initialize pygame
 pygame.init()
