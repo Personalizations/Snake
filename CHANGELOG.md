@@ -1,3 +1,9 @@
+### 0.3
+
+- add project structure
+- optimized the path guidance of README.md and contribution documents
+- add resource folder
+
 ### 0.2
 
 - add support for library dependencies
