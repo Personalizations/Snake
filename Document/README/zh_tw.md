@@ -50,14 +50,14 @@
 
 ```
 snake/
-├── Assets/             # 游戲資源
-│  ├── audio/           # 音頻
-│  │  └── test.txt      # 測試文件
+├── Assets/             # 遊戲資源
+│  ├── audio/           # 音訊
+│  │  └── test.txt      # 測試檔案
 │  ├── background/      # 背景
-│  │  └── test.txt      # 測試文件
-│  ├── icon/            # 圖標
-│  │  └── test.txt      # 測試文件
-│  └── index.html       # 資源測試文件
+│  │  └── test.txt      # 測試檔案
+│  ├── icon/            # 圖示
+│  │  └── test.txt      # 測試檔案
+│  └── index.html       # 資源測試檔案
 ├── Document/           # 文件目錄
 │  ├── README/          # 多語言README文件
 │  │  ├── zh_cn.md      # 簡體中文README
@@ -67,20 +67,21 @@ snake/
 │     ├── zh_cn.md      # 簡體中文貢獻指南
 │     ├── zh_tw.md      # 繁體中文貢獻指南
 │     └── jp.md         # 日語貢獻指南
+├── .idea/              # IDE設定檔案
+│  ├── vcs.xml          # 版本控制設定
+│  ├── modules.xml      # 模組設定
+│  ├── .gitignore       # IDE特定忽略檔案
+│  ├── jsLibraryMappings.xml  # JavaScript庫映射
+│  ├── inspectionProfiles/    # 檢查設定檔案
+│  │  └── Project_Default.xml # 預設專案檢查設定
+│  └── misc.xml         # 其他雜項設定
 ├── README.md           # 主README檔案（英文）
-├── CHANGELOG.md        # 更新日志文件
+├── CHANGELOG.md        # 更新日誌檔案
 ├── CONTRIBUTING.md     # 主貢獻指南檔案（英文）
 ├── LICENSE             # GPL-3.0 許可證
-├── main.py             # 主軟體
+├── main.py             # 主程式
 ├── requirements.txt    # 專案依賴項
-└── .idea/              # IDE配置檔案
-    ├── vcs.xml         # 版本控制配置
-    ├── modules.xml     # 模組配置
-    ├── .gitignore      # IDE特定忽略檔案
-    ├── jsLibraryMappings.xml  # JavaScript庫映射
-    ├── inspectionProfiles/    # 檢查配置檔案
-    │  └── Project_Default.xml # 預設專案檢查配置
-    └── misc.xml        # 其他雜項配置
+└── .gitignore          # 版本控制忽略檔案
 ```
 
 ## 貢獻
