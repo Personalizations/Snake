@@ -56,35 +56,36 @@ See [CONTRIBUTING.md](./CONTRIBUTING.md) for more details.
 snake/
 ├── Assets/             # Game assets
 │  ├── audio/           # Audio
-│  │  └── test.txt      # Test File
+│  │  └── test.txt      # Test file
 │  ├── background/      # Background
-│  │  └── test.txt      # Test File
+│  │  └── test.txt      # Test file
 │  ├── icon/            # Icon
-│  │  └── test.txt      # Test File
+│  │  └── test.txt      # Test file
 │  └── index.html       # Resource test file
 ├── Document/           # Documentation directory
 │  ├── README/          # Multi-language README documents
 │  │  ├── zh_cn.md      # Simplified Chinese README
 │  │  ├── zh_tw.md      # Traditional Chinese README
 │  │  └── jp.md         # Japanese README
-│  └── CONTRIBUTING/    # MultiMulti-language contribution guidelines
+│  └── CONTRIBUTING/    # Multi-language contribution guidelines
 │     ├── zh_cn.md      # Simplified Chinese contribution guidelines
 │     ├── zh_tw.md      # Traditional Chinese contribution guidelines
 │     └── jp.md         # Japanese contribution guidelines
+├── .idea/              # IDE configuration files
+│  ├── vcs.xml          # Version control configuration
+│  ├── modules.xml      # Module configuration
+│  ├── .gitignore       # IDE-specific ignore file
+│  ├── jsLibraryMappings.xml  # JavaScript library mappings
+│  ├── inspectionProfiles/    # Inspection configuration files
+│  │  └── Project_Default.xml # Default project inspection configuration
+│  └── misc.xml         # Other miscellaneous configurations
 ├── README.md           # Main README file (English)
 ├── CHANGELOG.md        # Update log file
 ├── CONTRIBUTING.md     # Main contribution guidelines file (English)
 ├── LICENSE             # GPL-3.0 License
 ├── main.py             # Main program
 ├── requirements.txt    # Project dependencies
-└── .idea/              # IDE configuration files
-    ├── vcs.xml         # Version control configuration
-    ├── modules.xml     # Module configuration
-    ├── .gitignore      # IDE-specific ignore file
-    ├── jsLibraryMappings.xml  # JavaScript library mappings
-    ├── inspectionProfiles/    # Inspection configuration files
-    │  └── Project_Default.xml # Default project inspection configuration
-    └── misc.xml        # Other miscellaneous configurations
+└── .gitignore          # Version control ignore file
 ```
 
 ## Contributing
