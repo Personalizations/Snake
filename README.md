@@ -71,6 +71,11 @@ snake/
 │     ├── zh_cn.md      # Simplified Chinese contribution guidelines
 │     ├── zh_tw.md      # Traditional Chinese contribution guidelines
 │     └── jp.md         # Japanese contribution guidelines
+├── Function/           # Function modules
+│  └── home_menu/       # Home menu related functions
+│     ├── exit_game.py  # Exit game function implementation
+│     ├── start_game.py # Start game function implementation
+│     └── options.py    # Options function implementation
 ├── .idea/              # IDE configuration files
 │  ├── vcs.xml          # Version control configuration
 │  ├── modules.xml      # Module configuration
