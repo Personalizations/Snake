@@ -67,20 +67,21 @@ snake/
 │     ├── zh_cn.md      # 简体中文贡献指南
 │     ├── zh_tw.md      # 繁体中文贡献指南
 │     └── jp.md         # 日语贡献指南
+├── .idea/              # IDE配置文件
+│  ├── vcs.xml          # 版本控制配置
+│  ├── modules.xml      # 模块配置
+│  ├── .gitignore       # IDE特定忽略文件
+│  ├── jsLibraryMappings.xml  # JavaScript库映射
+│  ├── inspectionProfiles/    # 检查配置文件
+│  │  └── Project_Default.xml # 默认项目检查配置
+│  └── misc.xml         # 其他杂项配置
 ├── README.md           # 主README文件（英文）
 ├── CHANGELOG.md        # 更新日志文件
 ├── CONTRIBUTING.md     # 主贡献指南文件（英文）
 ├── LICENSE             # GPL-3.0 许可证
 ├── main.py             # 主程序
 ├── requirements.txt    # 项目依赖项
-└── .idea/              # IDE配置文件
-    ├── vcs.xml         # 版本控制配置
-    ├── modules.xml     # 模块配置
-    ├── .gitignore      # IDE特定忽略文件
-    ├── jsLibraryMappings.xml  # JavaScript库映射
-    ├── inspectionProfiles/    # 检查配置文件
-    │  └── Project_Default.xml # 默认项目检查配置
-    └── misc.xml        # 其他杂项配置
+└── .gitignore          # 版本控制忽略文件
 ```
 
 ## 贡献
