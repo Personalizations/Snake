@@ -21,7 +21,11 @@ def show_options():
     small_font = pygame.font.SysFont("SimHei", 24)
 
     # Options content
-    options = ["Difficulty Speed Settings", "Difficulty Settings", "Return to Main Menu"]
+    options = [
+        "Difficulty Speed Settings",
+        "Difficulty Settings",
+        "Return to Main Menu",
+    ]
     selected_option = 0
 
     clock = pygame.time.Clock()
