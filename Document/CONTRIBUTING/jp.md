@@ -60,7 +60,7 @@ pip install black
 black .
 ```
 
-1. lint チェック（flake8などのツールを使用する場合）：
+2. lint チェック（flake8などのツールを使用する場合）：
 
 ```
 \# flake8 がインストールされていない場合はインストールする

@@ -63,7 +63,7 @@ It's recommended to check code style and quality before committing:
 
 
 
-1.  Code style formatting (if using tools like black):
+1. Code style formatting (if using tools like black):
 
 
 
@@ -79,7 +79,7 @@ black .
 
 
 
-1.  Lint checking (if using tools like flake8):
+2. Lint checking (if using tools like flake8):
 
 
 

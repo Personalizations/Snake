@@ -60,7 +60,7 @@ pip install black
 black.
 ```
 
-1. Lint 檢查（如果使用 flake8 等工具）：
+2. Lint 檢查（如果使用 flake8 等工具）：
 
 ```
 \# 如果尚未安裝 flake8，請安裝
