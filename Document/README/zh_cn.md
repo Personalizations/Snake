@@ -67,6 +67,11 @@ snake/
 │     ├── zh_cn.md      # 简体中文贡献指南
 │     ├── zh_tw.md      # 繁体中文贡献指南
 │     └── jp.md         # 日语贡献指南
+├── Function/           # 功能模块
+│  └── home_menu/       # 主菜单相关功能
+│     ├── exit_game.py  # 退出游戏功能实现
+│     ├── start_game.py # 开始游戏功能实现
+│     └── options.py    # 选项功能实现
 ├── .idea/              # IDE配置文件
 │  ├── vcs.xml          # 版本控制配置
 │  ├── modules.xml      # 模块配置
