@@ -67,20 +67,21 @@ snake/
 │     ├── zh_cn.md      # 簡体字中国語の貢献ガイドライン
 │     ├── zh_tw.md      # 繁体字中国語の貢献ガイドライン
 │     └── jp.md         # 日本語の貢献ガイドライン
+├── .idea/              # IDE設定ファイル
+│  ├── vcs.xml          # バージョン管理設定
+│  ├── modules.xml      # モジュール設定
+│  ├── .gitignore       # IDE固有の無視ファイル
+│  ├── jsLibraryMappings.xml  # JavaScriptライブラリマッピング
+│  ├── inspectionProfiles/    # 検査設定ファイル
+│  │  └── Project_Default.xml # デフォルトのプロジェクト検査設定
+│  └── misc.xml         # その他の雑多な設定
 ├── README.md           # メインのREADMEファイル（英語）
-├── CHANGELOG.md        # ログファイルの更新
+├── CHANGELOG.md        # 更新ログファイル
 ├── CONTRIBUTING.md     # メインの貢献ガイドラインファイル（英語）
-├── LICENSE             # GPL-3.0 ライセンス
+├── LICENSE             # GPL-3.0ライセンス
 ├── main.py             # メインプログラム
 ├── requirements.txt    # プロジェクトの依存関係
-└── .idea/              # IDEの設定ファイル
-    ├── vcs.xml         # バージョン管理の設定
-    ├── modules.xml     # モジュールの設定
-    ├── .gitignore      # IDE固有の無視ファイル
-    ├── jsLibraryMappings.xml  # JavaScriptライブラリのマッピング
-    ├── inspectionProfiles/    # 検査設定ファイル
-    │  └── Project_Default.xml # デフォルトのプロジェクト検査設定
-    └── misc.xml        # その他の雑多な設定
+└── .gitignore          # バージョン管理の無視ファイル
 ```
 
 ## 貢献
