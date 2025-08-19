@@ -56,7 +56,8 @@ See [CONTRIBUTING.md](./CONTRIBUTING.md) for more details.
 snake/
 ├── Assets/             # Game assets
 │  ├── audio/           # Audio
-│  │  └── test.txt      # Test file
+│  │  ├── confirm.wav   # Confirmation sound effect
+│  │  └── select.wav    # Select sound effects
 │  ├── background/      # Background
 │  │  └── test.txt      # Test file
 │  ├── icon/            # Icon
