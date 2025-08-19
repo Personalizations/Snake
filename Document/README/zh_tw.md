@@ -52,7 +52,8 @@
 snake/
 ├── Assets/             # 遊戲資源
 │  ├── audio/           # 音訊
-│  │  └── test.txt      # 測試檔案
+│  │  ├── confirm.wav   # 確認音效
+│  │  └── select.wav    # 選擇音效
 │  ├── background/      # 背景
 │  │  └── test.txt      # 測試檔案
 │  ├── icon/            # 圖示

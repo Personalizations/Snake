@@ -52,7 +52,8 @@ Python と Pygame ライブラリを使って実装された、古典的なス�
 snake/
 ├── Assets/             # ゲームアセット
 │  ├── audio/           # オーディオ
-│  │  └── test.txt      # テストファイル
+│  │  ├── confirm.wav   # 確認効果音
+│  │  └── select.wav    # 効果音を選択
 │  ├── background/      # 背景
 │  │  └── test.txt      # テストファイル
 │  ├── icon/            # アイコン
