@@ -1,3 +1,12 @@
+### 0.7
+
+- add confirmation sound effects and selection sound effects to the project structure directory of README.md in other languages
+- add confirmation sound effects and selection sound effects to the project structure directory of README.md
+- optimize the code formatting of Traditional Chinese CONTRIBUTING.md
+- optimize the code formatting of Simplified Chinese CONTRIBUTING.md
+- optimize the code formatting of Japanese CONTRIBUTING.md
+- optimize the code formatting of CONTRIBUTING.md
+
 ### 0.6
 
 - move the sound effects to the home_menu folder
