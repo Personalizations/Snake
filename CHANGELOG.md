@@ -1,3 +1,10 @@
+### 0.5
+
+- project structure for adding functionality jp.md
+- restructure the README jp.md project
+- project structure for adding functionality zh_tw.md
+- restructure the README zh_tw.md project
+
 ### 0.4
 
 - project structure for adding functionality zh_cn.md
