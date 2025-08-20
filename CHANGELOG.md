@@ -1,3 +1,11 @@
+### 0.6
+
+- move the sound effects to the home_menu folder
+- add menu bar confirmation sound effect
+- add menu bar selection sound effect
+- use black . command to format the file
+- fix errors in contribution documentation
+
 ### 0.5
 
 - project structure for adding functionality jp.md
