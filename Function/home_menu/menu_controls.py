@@ -1,11 +1,12 @@
 import pygame
 import sys
+import math
 from pygame import mixer
 
 # Initialize audio system
 mixer.init()
 
-# Load menu sound effects (ensure these files exist in Assets/audio or modify paths)
+# Load menu sound effects (ensure these files exist in Assets/audio directory or modify paths)
 try:
     SELECT_SOUND = mixer.Sound("Assets/audio/select.wav")
     CONFIRM_SOUND = mixer.Sound("Assets/audio/confirm.wav")
@@ -39,7 +40,7 @@ class MenuOption:
         """Update option state and animation"""
         if self.is_selected:
             # Breathing effect when selected
-            self.animation_offset = (self.animation_offset + self.animation_speed) % (2 * 3.14)
+            self.animation_offset = (self.animation_offset + self.animation_speed) % (2 * math.pi)
         else:
             self.animation_offset = 0
 
@@ -49,7 +50,8 @@ class MenuOption:
         self.text_surface = self.font.render(self.text, True, color)
 
         # Calculate position with scale effect when selected
-        scale = 1.0 + (abs(pygame.math.sin(self.animation_offset)) * 0.1) if self.is_selected else 1.0
+        # Use math.sin instead of pygame.math.sin to fix error
+        scale = 1.0 + (abs(math.sin(self.animation_offset)) * 0.1) if self.is_selected else 1.0
         scaled_surface = pygame.transform.scale(
             self.text_surface,
             (int(self.text_surface.get_width() * scale),
@@ -97,7 +99,7 @@ class MenuSystem:
             )
             self.options.append(option)
 
-        # Default select first option
+        # Select first option by default
         if self.options:
             self.options[0].is_selected = True
 
@@ -164,7 +166,7 @@ class MenuSystem:
         """Select current option and execute corresponding action"""
         CONFIRM_SOUND.play()
         if self.options[self.selected_index].action:
-            # Add visual feedback for confirmation
+            # Add visual feedback for selection confirmation
             self._draw_confirmation_feedback()
             pygame.display.flip()
             pygame.time.delay(200)  # Short delay to enhance feedback
