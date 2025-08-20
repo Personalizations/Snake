@@ -3,6 +3,7 @@ import random
 from Function.home_menu.start_game import start_game
 from Function.home_menu.options import show_options
 from Function.home_menu.exit_game import exit_game
+from Function.home_menu.menu_controls import MenuSystem
 
 # Initialize pygame
 pygame.init()
@@ -78,7 +79,7 @@ def show_message(message, color, size, y_offset=0):
 
 
 def main_game():
-    """Main game function (renamed from original main function)"""
+    """Main game function"""
     global FPS  # Declare FPS as global to modify within function
     # Initialize snake position and direction
     snake = [(GRID_WIDTH // 2, GRID_HEIGHT // 2)]
@@ -96,7 +97,7 @@ def main_game():
     game_over = False
 
     while running:
-        # Handle events
+        # Event handling
         for event in pygame.event.get():
             if event.type == pygame.QUIT:
                 running = False
@@ -174,7 +175,7 @@ def main_game():
 
 
 def main_menu():
-    """Main menu function"""
+    """Main menu function - using menu system from menu_controls.py"""
     # Initialize pygame
     pygame.init()
 
@@ -182,54 +183,37 @@ def main_menu():
     screen = pygame.display.set_mode((WIDTH, HEIGHT))
     pygame.display.set_caption("Snake Game")
 
-    # Font settings
-    font = pygame.font.SysFont("SimHei", 48)
-    option_font = pygame.font.SysFont("SimHei", 36)
+    # Define menu options (text and corresponding actions)
+    menu_options = [
+        ("Start Game", start_game),
+        ("Options", show_options),
+        ("Exit Game", exit_game)
+    ]
 
-    # Menu options
-    options = ["Start Game", "Options", "Exit Game"]
-    selected_option = 0
+    # Create menu system instance
+    menu = MenuSystem(
+        screen_width=WIDTH,
+        screen_height=HEIGHT,
+        title="Snake Game",
+        options_list=menu_options
+    )
 
     clock = pygame.time.Clock()
     running = True
 
     while running:
-        screen.fill(BLACK)
+        # Handle events
+        menu.handle_events()
 
-        # Title
-        title = font.render("Snake Game", True, GREEN)
-        screen.blit(title, (WIDTH // 2 - title.get_width() // 2, 100))
+        # Update menu state
+        menu.update()
 
-        # Draw options
-        for i, option in enumerate(options):
-            color = WHITE if i == selected_option else (100, 100, 100)
-            text = option_font.render(option, True, color)
-            screen.blit(text, (WIDTH // 2 - text.get_width() // 2, 250 + i * 70))
+        # Render menu
+        menu.render(screen)
 
-        # Event handling
-        for event in pygame.event.get():
-            if event.type == pygame.QUIT:
-                running = False
-            elif event.type == pygame.KEYDOWN:
-                if event.key == pygame.K_UP:
-                    selected_option = (selected_option - 1) % len(options)
-                elif event.key == pygame.K_DOWN:
-                    selected_option = (selected_option + 1) % len(options)
-                elif event.key == pygame.K_RETURN:
-                    # Execute corresponding function based on selection
-                    if selected_option == 0:
-                        start_game()  # Start game
-                        # Re-initialize menu interface
-                        screen = pygame.display.set_mode((WIDTH, HEIGHT))
-                    elif selected_option == 1:
-                        show_options()  # Show options
-                        # Re-initialize menu interface
-                        screen = pygame.display.set_mode((WIDTH, HEIGHT))
-                    elif selected_option == 2:
-                        exit_game()  # Exit game
-
+        # Update display
         pygame.display.flip()
-        clock.tick(10)
+        clock.tick(60)
 
     exit_game()
 
@@ -238,4 +222,4 @@ def main_menu():
 main = main_game
 
 if __name__ == "__main__":
-    main_menu()  # Program entry changed to main menu
+    main_menu()  # Program entry point changed to main menu
