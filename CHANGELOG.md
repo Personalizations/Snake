@@ -1,3 +1,9 @@
+### 0.8
+
+- fix menu_controls.py error
+- import menu_controls.py into main.py
+- optimize the implementation of start menu option response and feedback function
+
 ### 0.7
 
 - add confirmation sound effects and selection sound effects to the project structure directory of README.md in other languages
