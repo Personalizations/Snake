@@ -1,3 +1,10 @@
+### 0.4
+
+- project structure for adding functionality zh_cn.md
+- restructure the README zh_cn.md project
+- project structure for adding functionality
+- restructure the README project
+
 ### 0.3
 
 - add project structure
