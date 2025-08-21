@@ -72,6 +72,7 @@ snake/
 │  └── home_menu/       # ホームメニュー関連機能
 │     ├── exit_game.py  # ゲーム終了機能の実装
 │     ├── start_game.py # ゲーム開始機能の実装
+│     ├── menu_controls.py # メニューバーコントロールファイル
 │     └── options.py    # オプション機能の実装
 ├── .idea/              # IDE設定ファイル
 │  ├── vcs.xml          # バージョン管理設定
