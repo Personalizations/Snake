@@ -21,7 +21,7 @@ def main_menu():
     menu_options = [
         ("Start Game", start_game),
         ("Options", show_options),
-        ("Exit Game", exit_game)
+        ("Exit Game", exit_game),
     ]
 
     # Create menu system instance
@@ -29,7 +29,7 @@ def main_menu():
         screen_width=WIDTH,
         screen_height=HEIGHT,
         title="Snake Game",
-        options_list=menu_options
+        options_list=menu_options,
     )
 
     clock = pygame.time.Clock()

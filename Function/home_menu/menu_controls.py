@@ -16,14 +16,20 @@ except:
         def play(self):
             pass
 
-
     SELECT_SOUND = DummySound()
     CONFIRM_SOUND = DummySound()
 
 
 class MenuOption:
-    def __init__(self, text, action=None, font=None, color=(255, 255, 255),
-                 hover_color=(0, 255, 0), y_pos=0):
+    def __init__(
+        self,
+        text,
+        action=None,
+        font=None,
+        color=(255, 255, 255),
+        hover_color=(0, 255, 0),
+        y_pos=0,
+    ):
         self.text = text
         self.action = action
         self.font = font or pygame.font.SysFont("SimHei", 36)
@@ -40,7 +46,9 @@ class MenuOption:
         """Update option state and animation"""
         if self.is_selected:
             # Breathing effect when selected
-            self.animation_offset = (self.animation_offset + self.animation_speed) % (2 * math.pi)
+            self.animation_offset = (self.animation_offset + self.animation_speed) % (
+                2 * math.pi
+            )
         else:
             self.animation_offset = 0
 
@@ -51,11 +59,17 @@ class MenuOption:
 
         # Calculate position with scale effect when selected
         # Use math.sin instead of pygame.math.sin to fix error
-        scale = 1.0 + (abs(math.sin(self.animation_offset)) * 0.1) if self.is_selected else 1.0
+        scale = (
+            1.0 + (abs(math.sin(self.animation_offset)) * 0.1)
+            if self.is_selected
+            else 1.0
+        )
         scaled_surface = pygame.transform.scale(
             self.text_surface,
-            (int(self.text_surface.get_width() * scale),
-             int(self.text_surface.get_height() * scale))
+            (
+                int(self.text_surface.get_width() * scale),
+                int(self.text_surface.get_height() * scale),
+            ),
         )
 
         self.rect = scaled_surface.get_rect(center=(center_x, self.y_pos))
@@ -92,11 +106,7 @@ class MenuSystem:
 
         for i, (text, action) in enumerate(options_list):
             y_pos = start_y + i * spacing
-            option = MenuOption(
-                text=text,
-                action=action,
-                y_pos=y_pos
-            )
+            option = MenuOption(text=text, action=action, y_pos=y_pos)
             self.options.append(option)
 
         # Select first option by default
@@ -160,7 +170,7 @@ class MenuSystem:
     def _update_selection(self):
         """Update selection state"""
         for i, option in enumerate(self.options):
-            option.is_selected = (i == self.selected_index)
+            option.is_selected = i == self.selected_index
 
     def _select_option(self):
         """Select current option and execute corresponding action"""
@@ -175,10 +185,14 @@ class MenuSystem:
     def _draw_confirmation_feedback(self):
         """Draw visual feedback for selection confirmation"""
         option = self.options[self.selected_index]
-        s = pygame.Surface((option.rect.width + 40, option.rect.height + 20), pygame.SRCALPHA)
+        s = pygame.Surface(
+            (option.rect.width + 40, option.rect.height + 20), pygame.SRCALPHA
+        )
         pygame.draw.rect(s, (0, 255, 0, 50), s.get_rect(), border_radius=5)
-        screen_pos = (option.rect.centerx - s.get_width() // 2,
-                      option.rect.centery - s.get_height() // 2)
+        screen_pos = (
+            option.rect.centerx - s.get_width() // 2,
+            option.rect.centery - s.get_height() // 2,
+        )
         pygame.display.get_surface().blit(s, screen_pos)
 
     def update(self):
