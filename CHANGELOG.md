@@ -1,3 +1,9 @@
+### 0.9
+
+- add the game_core.py file to prepare for the subsequent main.py slimming down
+- fix the issue of no sound when selecting menu bar
+- project structure with menu_controls.py added
+
 ### 0.8
 
 - fix menu_controls.py error
