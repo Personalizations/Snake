@@ -8,8 +8,8 @@ mixer.init()
 
 # Load menu sound effects (ensure these files exist in Assets/audio directory or modify paths)
 try:
-    SELECT_SOUND = mixer.Sound("Assets/audio/select.wav")
-    CONFIRM_SOUND = mixer.Sound("Assets/audio/confirm.wav")
+    SELECT_SOUND = mixer.Sound("Function/home_menu/audio/select.wav")
+    CONFIRM_SOUND = mixer.Sound("Function/home_menu/audio/confirm.wav")
 except:
     # Use silent placeholder if sound loading fails
     class DummySound:
