@@ -1,3 +1,8 @@
+### 1.0
+
+- add project structure for game_core.py
+- refactor the game rendering function of main.py to only render the menu bar
+
 ### 0.9
 
 - add the game_core.py file to prepare for the subsequent main.py slimming down
