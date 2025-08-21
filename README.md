@@ -74,10 +74,12 @@ snake/
 │     └── jp.md         # Japanese contribution guidelines
 ├── Function/           # Function modules
 │  └── home_menu/       # Home menu related functions
-│     ├── exit_game.py  # Exit game function implementation
-│     ├── start_game.py # Start game function implementation
-│     ├── menu_controls.py # Menu bar control file
-│     └── options.py    # Options function implementation
+│  │   ├── exit_game.py  # Exit game function implementation
+│  │   ├── start_game.py # Start game function implementation
+│  │   ├── menu_controls.py # Menu bar control file
+│  │   └── options.py    # Options function implementation
+│  └── game/            # Game resource folder
+│     └── game_core.py  # Game core files
 ├── .idea/              # IDE configuration files
 │  ├── vcs.xml          # Version control configuration
 │  ├── modules.xml      # Module configuration
