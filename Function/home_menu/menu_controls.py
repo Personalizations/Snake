@@ -19,20 +19,27 @@ except:
     SELECT_SOUND = DummySound()
     CONFIRM_SOUND = DummySound()
 
+# Load menu background image
+try:
+    MENU_BACKGROUND = pygame.image.load("Assets/background/menu_en.png").convert()
+except:
+    # Use None as marker if loading fails
+    MENU_BACKGROUND = None
+
 
 class MenuOption:
     def __init__(
-        self,
-        text,
-        action=None,
-        font=None,
-        color=(255, 255, 255),
-        hover_color=(0, 255, 0),
-        y_pos=0,
+            self,
+            text,
+            action=None,
+            font=None,
+            color=(255, 255, 255),
+            hover_color=(0, 255, 0),
+            y_pos=0,
     ):
         self.text = text
         self.action = action
-        self.font = font or pygame.font.SysFont("SimHei", 36)
+        self.font = font or pygame.font.SysFont("Arial", 36)
         self.color = color
         self.hover_color = hover_color
         self.y_pos = y_pos
@@ -47,7 +54,7 @@ class MenuOption:
         if self.is_selected:
             # Breathing effect when selected
             self.animation_offset = (self.animation_offset + self.animation_speed) % (
-                2 * math.pi
+                    2 * math.pi
             )
         else:
             self.animation_offset = 0
@@ -57,8 +64,7 @@ class MenuOption:
         color = self.hover_color if self.is_selected else self.color
         self.text_surface = self.font.render(self.text, True, color)
 
-        # Calculate position with scale effect when selected
-        # Use math.sin instead of pygame.math.sin to fix error
+        # Add scaling effect when selected
         scale = (
             1.0 + (abs(math.sin(self.animation_offset)) * 0.1)
             if self.is_selected
@@ -92,9 +98,17 @@ class MenuSystem:
         self.title = title
         self.options = []
         self.selected_index = 0
-        self.title_font = pygame.font.SysFont("SimHei", 48)
+        self.title_font = pygame.font.SysFont("Arial", 48)
         self.title_color = (0, 255, 0)
-        self.bg_color = (0, 0, 0)
+        self.bg_color = (0, 0, 0)  # Background color (used if image loading fails)
+
+        # Resize background image to fit screen
+        self.background = None
+        if MENU_BACKGROUND:
+            self.background = pygame.transform.scale(
+                MENU_BACKGROUND,
+                (self.width, self.height)
+            )
 
         # Create menu options
         self._create_options(options_list)
@@ -202,7 +216,11 @@ class MenuSystem:
 
     def render(self, screen):
         """Draw entire menu"""
-        screen.fill(self.bg_color)
+        # Draw background image, use solid color if loading fails
+        if self.background:
+            screen.blit(self.background, (0, 0))
+        else:
+            screen.fill(self.bg_color)
 
         # Draw title
         title_surface = self.title_font.render(self.title, True, self.title_color)
