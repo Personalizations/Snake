@@ -12,6 +12,7 @@ WIDTH, HEIGHT = 800, 600  # Game window dimensions
 
 # Create game window
 screen = pygame.display.set_mode((WIDTH, HEIGHT))
+pygame.display.set_caption("Snake Game")
 
 
 def main_menu():
