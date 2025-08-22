@@ -1,3 +1,12 @@
+### 1.1
+
+- leave Snake Game in the Start Menu blank
+- fix the start menu bar error issue
+- add menu start background image
+- import menu_en.png start menu background image
+- prepare to add background images to the background later
+- updated click version to 8.2.2
+
 ### 1.0
 
 - add project structure for game_core.py
