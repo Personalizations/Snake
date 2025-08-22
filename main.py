@@ -28,7 +28,7 @@ def main_menu():
     menu = MenuSystem(
         screen_width=WIDTH,
         screen_height=HEIGHT,
-        title="Snake Game",
+        title="",
         options_list=menu_options,
     )
 
