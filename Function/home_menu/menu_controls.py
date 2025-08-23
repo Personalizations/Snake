@@ -101,6 +101,7 @@ class MenuSystem:
             img = pygame.image.load("Assets/background/menu_en.png").convert()
             self.background = pygame.transform.scale(img, (self.width, self.height))
         except Exception as e:
+            print(f"Background image loading failed: {e}")
             self.background = None
 
         # Create menu options
