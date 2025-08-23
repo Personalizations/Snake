@@ -1,3 +1,9 @@
+### 1.3
+
+- submit menu_jp.png to add more styles to the background
+- submit menu_zh_tw.png to add more styles to the background
+- submit menu_cn.png to add more styles to the background
+
 ### 1.2
 
 - fix the issue that the start menu does not display the background image
