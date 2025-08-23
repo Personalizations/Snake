@@ -1,3 +1,8 @@
+### 1.2
+
+- fix the issue that the start menu does not display the background image
+- modify the loading of the background image to be delayed until the MenuSystem is initialized
+
 ### 1.1
 
 - leave Snake Game in the Start Menu blank
