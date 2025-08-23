@@ -1,3 +1,9 @@
+### 1.4
+
+- after adding menu background, the button is not in the frame
+- fix the issue where the background of menu en.png could not be displayed after moving
+- move menu cn.png menu en.png menu jp.png menu zh tw.png from Assets/background to Assets/background/home_menu folder
+
 ### 1.3
 
 - submit menu_jp.png to add more styles to the background
