@@ -19,14 +19,6 @@ except:
     SELECT_SOUND = DummySound()
     CONFIRM_SOUND = DummySound()
 
-# Load menu background image
-try:
-    MENU_BACKGROUND = pygame.image.load("Assets/background/menu_en.png").convert()
-except:
-    # Use None as marker if loading fails
-    MENU_BACKGROUND = None
-
-
 class MenuOption:
     def __init__(
             self,
@@ -104,11 +96,13 @@ class MenuSystem:
 
         # Resize background image to fit screen
         self.background = None
-        if MENU_BACKGROUND:
-            self.background = pygame.transform.scale(
-                MENU_BACKGROUND,
-                (self.width, self.height)
-            )
+        try:
+            # Make sure the path is correct (adjust according to the actual location)
+            img = pygame.image.load("Assets/background/menu_en.png").convert()
+            self.background = pygame.transform.scale(img, (self.width, self.height))
+        except Exception as e:
+            print(f"Background image loading failed: {e}")
+            self.background = None
 
         # Create menu options
         self._create_options(options_list)
