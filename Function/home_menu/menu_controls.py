@@ -98,7 +98,7 @@ class MenuSystem:
         self.background = None
         try:
             # Make sure the path is correct (adjust according to the actual location)
-            img = pygame.image.load("Assets/background/menu_en.png").convert()
+            img = pygame.image.load("Assets/background/home_menu/menu_en.png").convert()
             self.background = pygame.transform.scale(img, (self.width, self.height))
         except Exception as e:
             print(f"Background image loading failed: {e}")
