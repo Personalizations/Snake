@@ -109,7 +109,7 @@ class MenuSystem:
 
     def _create_options(self, options_list):
         """Create menu options"""
-        start_y = self.height // 3
+        start_y = self.height // 2.1
         spacing = 70
 
         for i, (text, action) in enumerate(options_list):
