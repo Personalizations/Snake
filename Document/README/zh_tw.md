@@ -56,7 +56,7 @@ Snakes/                     # 項目根目錄，整體是一個貪吃蛇遊戲�
 ├── README.md               # 項目主要說明文件，包含項目介紹、安裝和使用方法等
 ├── main.py                 # 程序主要入口文件，負責啟動遊戲和統籌各模組
 ├── requirements.txt        # 項目依賴清單，記錄運行所需的Python庫及版本
-├── tree.py                 # 可能用於遊戲中的樹狀結構數據處理（如蛇的身體結構或關卡設計）
+├── tree.py                 # 專案架構生成腳本
 ├── .idea/                  # PyCharm IDE的項目配置目錄
 │   ├── Snake.iml           # 項目模組配置文件
 │   ├── jsLibraryMappings.xml # JavaScript庫映射配置

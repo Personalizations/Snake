@@ -56,6 +56,7 @@ Snakes/                     # 项目根目录，整体是一个贪吃蛇游戏�
 ├── README.md               # 项目主说明文档，包含项目介绍、安装和使用方法等
 ├── main.py                 # 程序主入口文件，负责启动游戏和统筹各模块
 ├── requirements.txt        # 项目依赖清单，记录运行所需的Python库及版本
+├── tree.py                 # 项目架构生成脚本
 ├── .idea/                  # PyCharm IDE的项目配置目录
 │   ├── Snake.iml           # 项目模块配置文件
 │   ├── jsLibraryMappings.xml # JavaScript库映射配置

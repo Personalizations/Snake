@@ -60,7 +60,7 @@ Snakes/                     # Project root directory, overall a Snake game proje
 ├── README.md               # Main project documentation, including project introduction, installation and usage instructions
 ├── main.py                 # Main program entry file, responsible for launching the game and coordinating modules
 ├── requirements.txt        # Project dependency list, recording required Python libraries and versions
-├── tree.py                 # Likely used for tree structure data processing in the game (e.g., snake body structure or level design)
+├── tree.py                 # Project architecture generation script
 ├── .idea/                  # PyCharm IDE project configuration directory
 │   ├── Snake.iml           # Project module configuration file
 │   ├── jsLibraryMappings.xml # JavaScript library mapping configuration
