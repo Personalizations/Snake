@@ -53,48 +53,55 @@ See [CONTRIBUTING.md](./CONTRIBUTING.md) for more details.
 ## Project Structure
 
 ```
-snake/
-├── Assets/             # Game assets
-│  ├── audio/           # Audio
-│  │  ├── confirm.wav   # Confirmation sound effect
-│  │  └── select.wav    # Select sound effects
-│  ├── background/      # Background
-│  │  └── test.txt      # Test file
-│  ├── icon/            # Icon
-│  │  └── test.txt      # Test file
-│  └── index.html       # Resource test file
-├── Document/           # Documentation directory
-│  ├── README/          # Multi-language README documents
-│  │  ├── zh_cn.md      # Simplified Chinese README
-│  │  ├── zh_tw.md      # Traditional Chinese README
-│  │  └── jp.md         # Japanese README
-│  └── CONTRIBUTING/    # Multi-language contribution guidelines
-│     ├── zh_cn.md      # Simplified Chinese contribution guidelines
-│     ├── zh_tw.md      # Traditional Chinese contribution guidelines
-│     └── jp.md         # Japanese contribution guidelines
-├── Function/           # Function modules
-│  └── home_menu/       # Home menu related functions
-│  │   ├── exit_game.py  # Exit game function implementation
-│  │   ├── start_game.py # Start game function implementation
-│  │   ├── menu_controls.py # Menu bar control file
-│  │   └── options.py    # Options function implementation
-│  └── game/            # Game resource folder
-│     └── game_core.py  # Game core files
-├── .idea/              # IDE configuration files
-│  ├── vcs.xml          # Version control configuration
-│  ├── modules.xml      # Module configuration
-│  ├── .gitignore       # IDE-specific ignore file
-│  ├── jsLibraryMappings.xml  # JavaScript library mappings
-│  ├── inspectionProfiles/    # Inspection configuration files
-│  │  └── Project_Default.xml # Default project inspection configuration
-│  └── misc.xml         # Other miscellaneous configurations
-├── README.md           # Main README file (English)
-├── CHANGELOG.md        # Update log file
-├── CONTRIBUTING.md     # Main contribution guidelines file (English)
-├── LICENSE             # GPL-3.0 License
-├── main.py             # Main program
-├── requirements.txt    # Project dependencies
-└── .gitignore          # Version control ignore file
+Snakes/                     # Project root directory, overall a Snake game project
+├── CHANGELOG.md            # Project change log, records feature changes and fixes for each version
+├── CONTRIBUTING.md         # Contribution guidelines, instructing developers on how to contribute to the project
+├── LICENSE                 # Project license file, specifying usage rights and restrictions
+├── README.md               # Main project documentation, including project introduction, installation and usage instructions
+├── main.py                 # Main program entry file, responsible for launching the game and coordinating modules
+├── requirements.txt        # Project dependency list, recording required Python libraries and versions
+├── tree.py                 # Likely used for tree structure data processing in the game (e.g., snake body structure or level design)
+├── .idea/                  # PyCharm IDE project configuration directory
+│   ├── Snake.iml           # Project module configuration file
+│   ├── jsLibraryMappings.xml # JavaScript library mapping configuration
+│   ├── misc.xml            # Miscellaneous configuration
+│   ├── modules.xml         # Module structure configuration
+│   ├── vcs.xml             # Version control system configuration
+│   ├── workspace.xml       # Workspace configuration, records IDE window layout etc.
+│   ├── inspectionProfiles/ # Code inspection configuration directory
+│   │   ├── Project_Default.xml # Default project inspection configuration
+│   │   ├── profiles_settings.xml # Inspection profile settings
+├── Assets/                 # Game resources directory, storing various materials
+│   ├── index.html          # Likely a web page description or accompanying web interface for the game
+│   ├── audio/              # Audio resources directory
+│   │   ├── home_menu/      # Main menu related sound effects
+│   │   │   ├── confirm.wav # Confirmation action sound effect
+│   │   │   ├── select.wav  # Selection action sound effect
+│   ├── background/         # Background images directory
+│   │   ├── home_menu/      # Main menu background images
+│   │   │   ├── menu_cn.png # Chinese menu background
+│   │   │   ├── menu_en.png # English menu background
+│   │   │   ├── menu_jp.png # Japanese menu background
+│   │   │   ├── menu_zh_tw.png # Traditional Chinese menu background
+│   ├── icon/               # Icon resources directory
+│   │   ├── test.txt        # Icon resource test file (may record icon-related information)
+├── Document/               # Project documentation directory, containing multi-language documents
+│   ├── CONTRIBUTING/       # Multi-language contribution guidelines
+│   │   ├── jp.md           # Japanese contribution guidelines
+│   │   ├── zh_cn.md        # Chinese (Simplified) contribution guidelines
+│   │   ├── zh_tw.md        # Chinese (Traditional) contribution guidelines
+│   ├── README/             # Multi-language documentation
+│   │   ├── jp.md           # Japanese documentation
+│   │   ├── zh_cn.md        # Chinese (Simplified) documentation
+│   │   ├── zh_tw.md        # Chinese (Traditional) documentation
+├── Function/               # Game function modules directory
+│   ├── game/               # Game core functions directory
+│   │   ├── game_core.py    # Implementation of core game logic (e.g., snake movement, collision detection)
+│   ├── home_menu/          # Main menu functions directory
+│   │   ├── exit_game.py    # Implementation of exit game functionality
+│   │   ├── menu_controls.py # Menu control logic (e.g., navigation, selection)
+│   │   ├── options.py      # Game options settings functionality (e.g., sound effects, language)
+│   │   ├── start_game.py   # Implementation of game launch functionality, responsible for transitioning from menu to game
 ```
 
 ## Contributing
