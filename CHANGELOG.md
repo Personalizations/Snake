@@ -1,3 +1,10 @@
+### 1.5
+
+- restructured the project using the Project Tree Generator and added more comprehensive Japanese comments.
+- restructured the project using the Project Tree Generator and added more comprehensive Traditional Chinese annotations.
+- restructured the project using the Project Tree Generator and added more comprehensive Chinese comments.
+- restructured the project using the Project Tree Generator and added more comprehensive English comments.
+
 ### 1.4
 
 - after adding menu background, the button is not in the frame
