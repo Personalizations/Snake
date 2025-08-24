@@ -1,3 +1,10 @@
+### 1.6
+
+- fix the error in the project structure directory
+- fix project structure directory comment error
+- add the results of the project structure generation script
+- add a script to generate the project structure
+
 ### 1.5
 
 - restructured the project using the Project Tree Generator and added more comprehensive Japanese comments.
