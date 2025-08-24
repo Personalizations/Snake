@@ -49,46 +49,54 @@
 ## 项目结构
 
 ```
-snake/
-├── Assets/             # 游戏资源
-│  ├── audio/           # 音频
-│  │  ├── confirm.wav   # 确认音效
-│  │  └── select.wav    # 选择音效
-│  ├── background/      # 背景
-│  │  └── test.txt      # 测试文件
-│  ├── icon/            # 图标
-│  │  └── test.txt      # 测试文件
-│  └── index.html       # 资源测试文件
-├── Document/           # 文档目录
-│  ├── README/          # 多语言README文档
-│  │  ├── zh_cn.md      # 简体中文README
-│  │  ├── zh_tw.md      # 繁体中文README
-│  │  └── jp.md         # 日语README
-│  └── CONTRIBUTING/    # 多语言贡献指南
-│     ├── zh_cn.md      # 简体中文贡献指南
-│     ├── zh_tw.md      # 繁体中文贡献指南
-│     └── jp.md         # 日语贡献指南
-├── Function/           # 功能模块
-│  └── home_menu/       # 主菜单相关功能
-│     ├── exit_game.py  # 退出游戏功能实现
-│     ├── start_game.py # 开始游戏功能实现
-│     ├── menu_controls.py # 菜单样式文件
-│     └── options.py    # 选项功能实现
-├── .idea/              # IDE配置文件
-│  ├── vcs.xml          # 版本控制配置
-│  ├── modules.xml      # 模块配置
-│  ├── .gitignore       # IDE特定忽略文件
-│  ├── jsLibraryMappings.xml  # JavaScript库映射
-│  ├── inspectionProfiles/    # 检查配置文件
-│  │  └── Project_Default.xml # 默认项目检查配置
-│  └── misc.xml         # 其他杂项配置
-├── README.md           # 主README文件（英文）
-├── CHANGELOG.md        # 更新日志文件
-├── CONTRIBUTING.md     # 主贡献指南文件（英文）
-├── LICENSE             # GPL-3.0 许可证
-├── main.py             # 主程序
-├── requirements.txt    # 项目依赖项
-└── .gitignore          # 版本控制忽略文件
+Snakes/                     # 项目根目录，整体是一个贪吃蛇游戏项目
+├── CHANGELOG.md            # 项目更新日志，记录各版本的功能变更和修复内容
+├── CONTRIBUTING.md         # 贡献指南，指导开发者如何参与项目贡献
+├── LICENSE                 # 项目许可证文件，规定项目的使用权限和限制
+├── README.md               # 项目主说明文档，包含项目介绍、安装和使用方法等
+├── main.py                 # 程序主入口文件，负责启动游戏和统筹各模块
+├── requirements.txt        # 项目依赖清单，记录运行所需的Python库及版本
+├── .idea/                  # PyCharm IDE的项目配置目录
+│   ├── Snake.iml           # 项目模块配置文件
+│   ├── jsLibraryMappings.xml # JavaScript库映射配置
+│   ├── misc.xml            # 杂项配置
+│   ├── modules.xml         # 模块结构配置
+│   ├── vcs.xml             # 版本控制系统配置
+│   ├── workspace.xml       # 工作区配置，记录IDE的窗口布局等
+│   ├── inspectionProfiles/ # 代码检查配置文件目录
+│   │   ├── Project_Default.xml # 默认项目检查配置
+│   │   ├── profiles_settings.xml # 检查配置文件的设置
+├── Assets/                 # 游戏资源目录，存放各类素材
+│   ├── index.html          # 可能是游戏的网页说明或配套网页界面
+│   ├── audio/              # 音频资源目录
+│   │   ├── home_menu/      # 主菜单相关音效
+│   │   │   ├── confirm.wav # 确认操作音效
+│   │   │   ├── select.wav  # 选择操作音效
+│   ├── background/         # 背景图片目录
+│   │   ├── home_menu/      # 主菜单背景图片
+│   │   │   ├── menu_cn.png # 中文菜单背景
+│   │   │   ├── menu_en.png # 英文菜单背景
+│   │   │   ├── menu_jp.png # 日文菜单背景
+│   │   │   ├── menu_zh_tw.png # 繁体中文菜单背景
+│   ├── icon/               # 图标资源目录
+│   │   ├── test.txt        # 图标资源测试文件（可能用于记录图标相关信息）
+├── Document/               # 项目文档目录，包含多语言文档
+│   ├── CONTRIBUTING/       # 多语言贡献指南
+│   │   ├── jp.md           # 日文贡献指南
+│   │   ├── zh_cn.md        # 中文（简体）贡献指南
+│   │   ├── zh_tw.md        # 中文（繁体）贡献指南
+│   ├── README/             # 多语言说明文档
+│   │   ├── jp.md           # 日文说明文档
+│   │   ├── zh_cn.md        # 中文（简体）说明文档
+│   │   ├── zh_tw.md        # 中文（繁体）说明文档
+├── Function/               # 游戏功能模块目录
+│   ├── game/               # 游戏核心功能目录
+│   │   ├── game_core.py    # 游戏核心逻辑实现（如蛇的移动、碰撞检测等）
+│   ├── home_menu/          # 主菜单功能目录
+│   │   ├── exit_game.py    # 退出游戏功能实现
+│   │   ├── menu_controls.py # 菜单控制逻辑（如导航、选择等）
+│   │   ├── options.py      # 游戏选项设置功能（如音效、语言等）
+│   │   ├── start_game.py   # 启动游戏功能实现，负责从菜单进入游戏
 ```
 
 ## 贡献
