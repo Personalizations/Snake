@@ -1,4 +1,4 @@
-Snakes/
+Snake/
 ├── CHANGELOG.md
 ├── CONTRIBUTING.md
 ├── LICENSE

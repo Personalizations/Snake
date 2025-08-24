@@ -53,7 +53,7 @@ See [CONTRIBUTING.md](./CONTRIBUTING.md) for more details.
 ## Project Structure
 
 ```
-Snakes/                     # Project root directory, overall a Snake game project
+Snake/                     # Project root directory, overall a Snake game project
 ├── CHANGELOG.md            # Project change log, records feature changes and fixes for each version
 ├── CONTRIBUTING.md         # Contribution guidelines, instructing developers on how to contribute to the project
 ├── LICENSE                 # Project license file, specifying usage rights and restrictions
