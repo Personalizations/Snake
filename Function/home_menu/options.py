@@ -57,6 +57,8 @@ def show_options():
                     # Handle option selection
                     if selected_option == 2:  # Return to main menu
                         running = False
+                elif event.key == pygame.K_ESCAPE:  # Press the ESC key to exit to the main menu
+                    running = False
 
         pygame.display.flip()
         clock.tick(10)
