@@ -1,3 +1,11 @@
+### 1.8
+
+- fix file code format
+- add selection page and press ESC key to exit to the main menu
+- repair Instructions Document Format
+- add Press 'ESC' to exit the current page
+- add one-key Q key detection Press Q to exit the game
+
 ### 1.7
 
 - add background music to the start menu
