@@ -21,8 +21,10 @@ except:
     CONFIRM_SOUND = DummySound()
     MENU_BG_MUSIC = None
 
+
 class BackgroundMusicHandler:
     """Background music handling class"""
+
     def __init__(self, music_path):
         self.music_path = music_path
         self.volume = 0.3  # Menu background music volume (lower than game music)
@@ -45,16 +47,18 @@ class BackgroundMusicHandler:
             mixer.music.stop()
             self.is_playing = False
 
+
 class MenuOption:
     """Class representing a single menu option"""
+
     def __init__(
-            self,
-            text,
-            action=None,
-            font=None,
-            color=(255, 255, 255),
-            hover_color=(0, 255, 0),
-            y_pos=0,
+        self,
+        text,
+        action=None,
+        font=None,
+        color=(255, 255, 255),
+        hover_color=(0, 255, 0),
+        y_pos=0,
     ):
         self.text = text
         self.action = action  # Function to execute when selected
@@ -73,7 +77,7 @@ class MenuOption:
         if self.is_selected:
             # Breathing effect when selected
             self.animation_offset = (self.animation_offset + self.animation_speed) % (
-                    2 * math.pi
+                2 * math.pi
             )
         else:
             self.animation_offset = 0
@@ -112,6 +116,7 @@ class MenuOption:
 
 class MenuSystem:
     """Main menu system handling navigation and rendering"""
+
     def __init__(self, screen_width, screen_height, title, options_list):
         self.width = screen_width
         self.height = screen_height

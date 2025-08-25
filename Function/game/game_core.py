@@ -81,24 +81,24 @@ def draw_snake(screen, snake):
     """Draw snake on screen"""
     # Draw head
     head_x, head_y = snake[0]
-    pygame.draw.rect(screen, DARK_GREEN,
-                     (head_x * GRID_SIZE, head_y * GRID_SIZE,
-                      GRID_SIZE, GRID_SIZE))
+    pygame.draw.rect(
+        screen,
+        DARK_GREEN,
+        (head_x * GRID_SIZE, head_y * GRID_SIZE, GRID_SIZE, GRID_SIZE),
+    )
 
     # Draw body
     for segment in snake[1:]:
         x, y = segment
-        pygame.draw.rect(screen, GREEN,
-                         (x * GRID_SIZE, y * GRID_SIZE,
-                          GRID_SIZE, GRID_SIZE))
+        pygame.draw.rect(
+            screen, GREEN, (x * GRID_SIZE, y * GRID_SIZE, GRID_SIZE, GRID_SIZE)
+        )
 
 
 def draw_food(screen, food):
     """Draw food on screen"""
     x, y = food
-    pygame.draw.rect(screen, RED,
-                     (x * GRID_SIZE, y * GRID_SIZE,
-                      GRID_SIZE, GRID_SIZE))
+    pygame.draw.rect(screen, RED, (x * GRID_SIZE, y * GRID_SIZE, GRID_SIZE, GRID_SIZE))
 
 
 def draw_score(screen, score):
