@@ -6,20 +6,47 @@ from pygame import mixer
 # Initialize audio system
 mixer.init()
 
-# Load menu sound effects (ensure these files exist in Assets/audio directory or modify paths)
+# Load menu sound effects and background music (ensure files exist or modify paths)
 try:
     SELECT_SOUND = mixer.Sound("Assets/audio/home_menu/select.wav")
     CONFIRM_SOUND = mixer.Sound("Assets/audio/home_menu/confirm.wav")
+    MENU_BG_MUSIC = "Assets/audio/home_menu/background_music.wav"
 except:
-    # Use silent placeholder if sound loading fails
+    # Silent placeholder when sound loading fails
     class DummySound:
         def play(self):
             pass
 
     SELECT_SOUND = DummySound()
     CONFIRM_SOUND = DummySound()
+    MENU_BG_MUSIC = None
+
+class BackgroundMusicHandler:
+    """Background music handling class"""
+    def __init__(self, music_path):
+        self.music_path = music_path
+        self.volume = 0.3  # Menu background music volume (lower than game music)
+        self.is_playing = False
+
+    def start(self):
+        """Start playing background music (looping)"""
+        if self.music_path and not self.is_playing:
+            try:
+                mixer.music.load(self.music_path)
+                mixer.music.set_volume(self.volume)
+                mixer.music.play(-1)  # -1 indicates infinite loop
+                self.is_playing = True
+            except Exception as e:
+                print(f"Menu background music playback failed: {e}")
+
+    def stop(self):
+        """Stop background music"""
+        if self.is_playing:
+            mixer.music.stop()
+            self.is_playing = False
 
 class MenuOption:
+    """Class representing a single menu option"""
     def __init__(
             self,
             text,
@@ -30,7 +57,7 @@ class MenuOption:
             y_pos=0,
     ):
         self.text = text
-        self.action = action
+        self.action = action  # Function to execute when selected
         self.font = font or pygame.font.SysFont("Arial", 36)
         self.color = color
         self.hover_color = hover_color
@@ -52,7 +79,7 @@ class MenuOption:
             self.animation_offset = 0
 
     def render(self, screen, center_x):
-        """Draw option with selection effects"""
+        """Draw the option with selection effects"""
         color = self.hover_color if self.is_selected else self.color
         self.text_surface = self.font.render(self.text, True, color)
 
@@ -84,6 +111,7 @@ class MenuOption:
 
 
 class MenuSystem:
+    """Main menu system handling navigation and rendering"""
     def __init__(self, screen_width, screen_height, title, options_list):
         self.width = screen_width
         self.height = screen_height
@@ -92,12 +120,16 @@ class MenuSystem:
         self.selected_index = 0
         self.title_font = pygame.font.SysFont("Arial", 48)
         self.title_color = (0, 255, 0)
-        self.bg_color = (0, 0, 0)  # Background color (used if image loading fails)
+        self.bg_color = (0, 0, 0)  # Background color (used if image fails to load)
 
-        # Resize background image to fit screen
+        # Initialize background music handler
+        self.bg_music = BackgroundMusicHandler(MENU_BG_MUSIC)
+        self.bg_music.start()  # Start background music
+
+        # Adjust background image to fit screen
         self.background = None
         try:
-            # Make sure the path is correct (adjust according to the actual location)
+            # Ensure path is correct (adjust according to actual location)
             img = pygame.image.load("Assets/background/home_menu/menu_en.png").convert()
             self.background = pygame.transform.scale(img, (self.width, self.height))
         except Exception as e:
@@ -108,7 +140,7 @@ class MenuSystem:
         self._create_options(options_list)
 
     def _create_options(self, options_list):
-        """Create menu options"""
+        """Create menu options from the provided list"""
         start_y = self.height // 2.1
         spacing = 70
 
@@ -122,9 +154,10 @@ class MenuSystem:
             self.options[0].is_selected = True
 
     def handle_events(self):
-        """Handle menu events"""
+        """Handle user input events for menu navigation"""
         for event in pygame.event.get():
             if event.type == pygame.QUIT:
+                self.bg_music.stop()  # Stop music when exiting
                 pygame.quit()
                 sys.exit()
 
@@ -138,6 +171,7 @@ class MenuSystem:
                 elif event.key == pygame.K_ESCAPE:
                     # Exit game or return to previous menu
                     if len(self.options) > 2 and self.options[-1].text == "Exit Game":
+                        self.bg_music.stop()  # Stop music when exiting
                         self.options[-1].action()
 
             elif event.type == pygame.MOUSEMOTION:
@@ -169,26 +203,28 @@ class MenuSystem:
         SELECT_SOUND.play()
 
     def _set_selected(self, index):
-        """Set selected option"""
+        """Set the selected option by index"""
         if 0 <= index < len(self.options):
             self.options[self.selected_index].is_selected = False
             self.selected_index = index
             self.options[self.selected_index].is_selected = True
 
     def _update_selection(self):
-        """Update selection state"""
+        """Update selection state for all options"""
         for i, option in enumerate(self.options):
             option.is_selected = i == self.selected_index
 
     def _select_option(self):
-        """Select current option and execute corresponding action"""
+        """Select current option and execute its action"""
         CONFIRM_SOUND.play()
         if self.options[self.selected_index].action:
             # Add visual feedback for selection confirmation
             self._draw_confirmation_feedback()
             pygame.display.flip()
-            pygame.time.delay(200)  # Short delay to enhance feedback
+            pygame.time.delay(200)  # Short delay for better feedback
+            self.bg_music.stop()  # Stop menu music before entering submenu or game
             self.options[self.selected_index].action()
+            self.bg_music.start()  # Restart music when returning from submenu
 
     def _draw_confirmation_feedback(self):
         """Draw visual feedback for selection confirmation"""
@@ -209,7 +245,7 @@ class MenuSystem:
             option.update()
 
     def render(self, screen):
-        """Draw entire menu"""
+        """Draw the entire menu"""
         # Draw background image, use solid color if loading fails
         if self.background:
             screen.blit(self.background, (0, 0))
