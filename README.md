@@ -27,6 +27,7 @@ See [CONTRIBUTING.md](./CONTRIBUTING.md) for more details.
 ## How to Play
 
 1. Run the game:
+
    ```
    python main.py
    ```
