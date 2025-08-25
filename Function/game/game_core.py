@@ -144,6 +144,10 @@ def game_loop(screen):
                 elif event.key == pygame.K_ESCAPE:
                     bg_music.stop()  # Stop music when exiting to menu
                     return
+                elif event.key == pygame.K_q:  # Press Q to exit the game
+                    bg_music.stop()
+                    pygame.quit()
+                    sys.exit()
 
         # Update direction
         direction = next_direction
