@@ -41,6 +41,7 @@ See [CONTRIBUTING.md](./CONTRIBUTING.md) for more details.
 4. Avoid hitting the walls or the snake's own body
 5. Press 'Q' to quit the game at any time
 6. Press 'R' to restart after game over
+7. Press 'ESC' to exit the current page
 
 ## Game Mechanics
 
