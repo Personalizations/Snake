@@ -1,3 +1,10 @@
+### 1.7
+
+- add background music to the start menu
+- add start menu background music
+- add music to the game background
+- add background_music.wav for later
+
 ### 1.6
 
 - fix the error in the project structure directory
