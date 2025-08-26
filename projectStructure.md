@@ -1,9 +1,10 @@
-Snake/
+Snakes/
 ├── CHANGELOG.md
 ├── CONTRIBUTING.md
 ├── LICENSE
 ├── README.md
 ├── main.py
+├── projectStructure.md
 ├── requirements.txt
 ├── tree.py
 ├── .idea/
@@ -19,7 +20,10 @@ Snake/
 ├── Assets/
 │   ├── index.html
 │   ├── audio/
+│   │   ├── background/
+│   │   │   ├── background_music.wav
 │   │   ├── home_menu/
+│   │   │   ├── background_music.wav
 │   │   │   ├── confirm.wav
 │   │   │   ├── select.wav
 │   ├── background/
