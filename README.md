@@ -54,57 +54,7 @@ See [CONTRIBUTING.md](./CONTRIBUTING.md) for more details.
 
 ## Project Structure
 
-```
-Snake/                     # Project root directory, overall a Snake game project
-├── CHANGELOG.md            # Project change log, records feature changes and fixes for each version
-├── CONTRIBUTING.md         # Contribution guidelines, instructing developers on how to contribute to the project
-├── LICENSE                 # Project license file, specifying usage rights and restrictions
-├── README.md               # Main project documentation, including project introduction, installation and usage instructions
-├── main.py                 # Main program entry file, responsible for launching the game and coordinating modules
-├── requirements.txt        # Project dependency list, recording required Python libraries and versions
-├── tree.py                 # Project architecture generation script
-├── .idea/                  # PyCharm IDE project configuration directory
-│   ├── Snake.iml           # Project module configuration file
-│   ├── jsLibraryMappings.xml # JavaScript library mapping configuration
-│   ├── misc.xml            # Miscellaneous configuration
-│   ├── modules.xml         # Module structure configuration
-│   ├── vcs.xml             # Version control system configuration
-│   ├── workspace.xml       # Workspace configuration, records IDE window layout etc.
-│   ├── inspectionProfiles/ # Code inspection configuration directory
-│   │   ├── Project_Default.xml # Default project inspection configuration
-│   │   ├── profiles_settings.xml # Inspection profile settings
-├── Assets/                 # Game resources directory, storing various materials
-│   ├── index.html          # Likely a web page description or accompanying web interface for the game
-│   ├── audio/              # Audio resources directory
-│   │   ├── home_menu/      # Main menu related sound effects
-│   │   │   ├── confirm.wav # Confirmation action sound effect
-│   │   │   ├── select.wav  # Selection action sound effect
-│   ├── background/         # Background images directory
-│   │   ├── home_menu/      # Main menu background images
-│   │   │   ├── menu_cn.png # Chinese menu background
-│   │   │   ├── menu_en.png # English menu background
-│   │   │   ├── menu_jp.png # Japanese menu background
-│   │   │   ├── menu_zh_tw.png # Traditional Chinese menu background
-│   ├── icon/               # Icon resources directory
-│   │   ├── test.txt        # Icon resource test file (may record icon-related information)
-├── Document/               # Project documentation directory, containing multi-language documents
-│   ├── CONTRIBUTING/       # Multi-language contribution guidelines
-│   │   ├── jp.md           # Japanese contribution guidelines
-│   │   ├── zh_cn.md        # Chinese (Simplified) contribution guidelines
-│   │   ├── zh_tw.md        # Chinese (Traditional) contribution guidelines
-│   ├── README/             # Multi-language documentation
-│   │   ├── jp.md           # Japanese documentation
-│   │   ├── zh_cn.md        # Chinese (Simplified) documentation
-│   │   ├── zh_tw.md        # Chinese (Traditional) documentation
-├── Function/               # Game function modules directory
-│   ├── game/               # Game core functions directory
-│   │   ├── game_core.py    # Implementation of core game logic (e.g., snake movement, collision detection)
-│   ├── home_menu/          # Main menu functions directory
-│   │   ├── exit_game.py    # Implementation of exit game functionality
-│   │   ├── menu_controls.py # Menu control logic (e.g., navigation, selection)
-│   │   ├── options.py      # Game options settings functionality (e.g., sound effects, language)
-│   │   ├── start_game.py   # Implementation of game launch functionality, responsible for transitioning from menu to game
-```
+[Click here to jump](./projectStructure.md)
 
 ## Contributing
 
