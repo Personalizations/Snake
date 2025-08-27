@@ -3,7 +3,7 @@ import os
 
 def generate_tree(startpath, ignore_dirs=None, ignore_files=None):
     """
-    Generate project directory tree with proper formatting
+    Generate project directory tree with enhanced deep structure visualization
     """
     if ignore_dirs is None:
         ignore_dirs = [".git", "__pycache__", "venv"]
@@ -15,73 +15,85 @@ def generate_tree(startpath, ignore_dirs=None, ignore_files=None):
     root_name = os.path.basename(startpath)
     output.append(f"{root_name}/")
 
-    # First pass: collect all directory information
-    dir_info = {}
+    # Collect all directory information for subsequent judgments
+    dir_hierarchy = {}
     for root, dirs, files in os.walk(startpath):
         dirs[:] = [d for d in dirs if d not in ignore_dirs]
         files = [f for f in files if f not in ignore_files]
-        dir_info[root] = {
+        dir_hierarchy[root] = {
             'dirs': dirs.copy(),
-            'files': files.copy()
+            'files': files.copy(),
+            'parent': os.path.dirname(root)
         }
 
-    # Second pass: generate directory tree
+    # Generate directory tree
     for root, dirs, files in os.walk(startpath):
         dirs[:] = [d for d in dirs if d not in ignore_dirs]
         files = [f for f in files if f not in ignore_files]
 
         # Calculate current level
         relative_path = os.path.relpath(root, startpath)
-        if relative_path == '.':
-            level = 0
-        else:
-            level = len(relative_path.split(os.sep))
+        level = len(relative_path.split(os.sep)) if relative_path != '.' else 0
 
         # Process subdirectories (excluding root directory)
         if level > 0:
             dir_name = os.path.basename(root)
-            parent_dir = os.path.dirname(root)
+            parent_dir = dir_hierarchy[root]['parent']
 
             # Determine if it's the last subdirectory of the parent directory
-            is_last = dir_name == dir_info[parent_dir]['dirs'][-1]
+            is_last_dir = dir_name == dir_hierarchy[parent_dir]['dirs'][-1] if dir_hierarchy[parent_dir][
+                'dirs'] else False
 
-            # Build indentation
-            indent = ""
-            if level > 1:
-                # Traverse up through directories to determine indentation style
-                current_path = parent_dir
-                for i in range(level - 2, 0, -1):
-                    grandparent = os.path.dirname(current_path)
-                    current_dir_name = os.path.basename(current_path)
-                    if current_dir_name != dir_info[grandparent]['dirs'][-1]:
-                        indent = "│   " + indent
-                    else:
-                        indent = "    " + indent
-                    current_path = grandparent
+            # Build indentation - accurately calculate connecting lines for each level
+            indent_segments = []
+            current_path = parent_dir
+            current_level = level - 1
 
-            # Determine connector
-            connector = "└── " if is_last else "├── "
+            while current_level > 0:
+                grandparent = dir_hierarchy[current_path]['parent']
+                current_dir_name = os.path.basename(current_path)
+
+                # Show vertical line if not the last subdirectory of ancestor directory
+                if grandparent in dir_hierarchy and dir_hierarchy[grandparent]['dirs'] and current_dir_name != \
+                        dir_hierarchy[grandparent]['dirs'][-1]:
+                    indent_segments.insert(0, "│   ")
+                else:
+                    indent_segments.insert(0, "    ")
+
+                current_path = grandparent
+                current_level -= 1
+
+            indent = ''.join(indent_segments)
+            connector = "└── " if is_last_dir else "├── "
             output.append(f"{indent}{connector}{dir_name}/")
 
         # Process files
         if files:
             # Build file indentation
-            file_indent = ""
-            if level > 0:
-                current_path = root
-                for i in range(level - 1, 0, -1):
-                    parent = os.path.dirname(current_path)
-                    current_dir_name = os.path.basename(current_path)
-                    if current_dir_name != dir_info[parent]['dirs'][-1]:
-                        file_indent = "│   " + file_indent
-                    else:
-                        file_indent = "    " + file_indent
-                    current_path = parent
+            file_indent_segments = []
+            current_path = root
+            current_level = level
 
-            # Process each file
+            while current_level > 0:
+                parent = dir_hierarchy[current_path]['parent']
+                current_dir_name = os.path.basename(current_path)
+
+                if parent in dir_hierarchy and dir_hierarchy[parent]['dirs'] and current_dir_name != \
+                        dir_hierarchy[parent]['dirs'][-1]:
+                    file_indent_segments.insert(0, "│   ")
+                else:
+                    file_indent_segments.insert(0, "    ")
+
+                current_path = parent
+                current_level -= 1
+
+            file_indent = ''.join(file_indent_segments)
+
+            # Process each file, determine if it's the last item
             for i, file in enumerate(sorted(files)):
-                is_last_file = (i == len(files) - 1) and (len(dirs) == 0)
-                connector = "└── " if is_last_file else "├── "
+                # Check if it's the last file with no more subdirectories
+                is_last_item = (i == len(files) - 1) and (len(dirs) == 0)
+                connector = "└── " if is_last_item else "├── "
                 output.append(f"{file_indent}{connector}{file}")
 
     # Write to file
@@ -92,9 +104,6 @@ def generate_tree(startpath, ignore_dirs=None, ignore_files=None):
 
 
 if __name__ == "__main__":
-    # Get current directory as starting path
     current_path = os.path.dirname(os.path.abspath(__file__))
-
-    # Generate directory tree and print
     tree = generate_tree(current_path)
     print(tree)
