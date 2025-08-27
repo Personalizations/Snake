@@ -4,11 +4,6 @@ import os
 def generate_tree(startpath, ignore_dirs=None, ignore_files=None):
     """
     Generate project directory tree with proper formatting
-
-    Parameters:
-        startpath: Project root directory path
-        ignore_dirs: List of directories to ignore
-        ignore_files: List of files to ignore
     """
     if ignore_dirs is None:
         ignore_dirs = [".git", "__pycache__", "venv"]
@@ -20,85 +15,74 @@ def generate_tree(startpath, ignore_dirs=None, ignore_files=None):
     root_name = os.path.basename(startpath)
     output.append(f"{root_name}/")
 
-    # Used to track the processing status of each directory
-    dir_status = {}
-
     # First pass: collect all directory information
+    dir_info = {}
     for root, dirs, files in os.walk(startpath):
         dirs[:] = [d for d in dirs if d not in ignore_dirs]
-        filtered_files = [f for f in files if f not in ignore_files]
-        dir_status[root] = {
+        files = [f for f in files if f not in ignore_files]
+        dir_info[root] = {
             'dirs': dirs.copy(),
-            'files': filtered_files
+            'files': files.copy()
         }
 
-    # Second pass: generate the directory tree
+    # Second pass: generate directory tree
     for root, dirs, files in os.walk(startpath):
         dirs[:] = [d for d in dirs if d not in ignore_dirs]
-        filtered_files = [f for f in files if f not in ignore_files]
+        files = [f for f in files if f not in ignore_files]
 
-        # Calculate current hierarchy level
+        # Calculate current level
         relative_path = os.path.relpath(root, startpath)
         if relative_path == '.':
             level = 0
         else:
             level = len(relative_path.split(os.sep))
 
-        # Process directories (excluding root directory)
+        # Process subdirectories (excluding root directory)
         if level > 0:
             dir_name = os.path.basename(root)
             parent_dir = os.path.dirname(root)
 
-            # Check if it's the last subdirectory of the parent directory
-            is_last_dir = False
-            if parent_dir in dir_status:
-                siblings = dir_status[parent_dir]['dirs']
-                is_last_dir = (dir_name == siblings[-1])
+            # Determine if it's the last subdirectory of the parent directory
+            is_last = dir_name == dir_info[parent_dir]['dirs'][-1]
 
             # Build indentation
-            indent_parts = []
-            for i in range(level - 1):
-                # For upper-level directories, display connecting lines if not the last subdirectory
-                ancestor_path = os.path.abspath(startpath)
-                for j in range(i + 1):
-                    ancestor_path = os.path.join(ancestor_path, os.listdir(ancestor_path)[0])
-
-                ancestor_parent = os.path.dirname(ancestor_path)
-                if ancestor_parent in dir_status:
-                    ancestor_name = os.path.basename(ancestor_path)
-                    ancestor_siblings = dir_status[ancestor_parent]['dirs']
-                    if ancestor_name != ancestor_siblings[-1]:
-                        indent_parts.append("│   ")
+            indent = ""
+            if level > 1:
+                # Traverse up through directories to determine indentation style
+                current_path = parent_dir
+                for i in range(level - 2, 0, -1):
+                    grandparent = os.path.dirname(current_path)
+                    current_dir_name = os.path.basename(current_path)
+                    if current_dir_name != dir_info[grandparent]['dirs'][-1]:
+                        indent = "│   " + indent
                     else:
-                        indent_parts.append("    ")
+                        indent = "    " + indent
+                    current_path = grandparent
 
-            indent = ''.join(indent_parts)
-            connector = "└── " if is_last_dir else "├── "
+            # Determine connector
+            connector = "└── " if is_last else "├── "
             output.append(f"{indent}{connector}{dir_name}/")
 
         # Process files
-        file_indent_parts = []
-        for i in range(level):
-            ancestor_path = os.path.abspath(startpath)
-            for j in range(i + 1):
-                if os.path.isdir(ancestor_path) and os.listdir(ancestor_path):
-                    ancestor_path = os.path.join(ancestor_path, os.listdir(ancestor_path)[0])
+        if files:
+            # Build file indentation
+            file_indent = ""
+            if level > 0:
+                current_path = root
+                for i in range(level - 1, 0, -1):
+                    parent = os.path.dirname(current_path)
+                    current_dir_name = os.path.basename(current_path)
+                    if current_dir_name != dir_info[parent]['dirs'][-1]:
+                        file_indent = "│   " + file_indent
+                    else:
+                        file_indent = "    " + file_indent
+                    current_path = parent
 
-            ancestor_parent = os.path.dirname(ancestor_path)
-            if ancestor_parent in dir_status:
-                ancestor_name = os.path.basename(ancestor_path)
-                ancestor_siblings = dir_status[ancestor_parent]['dirs']
-                if ancestor_name != ancestor_siblings[-1]:
-                    file_indent_parts.append("│   ")
-                else:
-                    file_indent_parts.append("    ")
-
-        file_indent = ''.join(file_indent_parts)
-
-        for i, file in enumerate(sorted(filtered_files)):
-            is_last_file = (i == len(filtered_files) - 1) and (len(dirs) == 0)
-            connector = "└── " if is_last_file else "├── "
-            output.append(f"{file_indent}{connector}{file}")
+            # Process each file
+            for i, file in enumerate(sorted(files)):
+                is_last_file = (i == len(files) - 1) and (len(dirs) == 0)
+                connector = "└── " if is_last_file else "├── "
+                output.append(f"{file_indent}{connector}{file}")
 
     # Write to file
     with open("projectStructure.md", "w", encoding="utf-8") as f:
@@ -111,6 +95,6 @@ if __name__ == "__main__":
     # Get current directory as starting path
     current_path = os.path.dirname(os.path.abspath(__file__))
 
-    # Generate directory tree and print it
+    # Generate directory tree and print
     tree = generate_tree(current_path)
     print(tree)
