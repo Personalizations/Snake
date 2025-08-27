@@ -11,6 +11,9 @@ def generate_tree(startpath, ignore_dirs=None, ignore_files=None):
         ignore_files = [".gitignore", ".DS_Store"]
 
     output = []
+    # Add opening Markdown code block tag
+    output.append("```")
+
     startpath = os.path.abspath(startpath)
     root_name = os.path.basename(startpath)
     output.append(f"{root_name}/")
@@ -31,7 +34,7 @@ def generate_tree(startpath, ignore_dirs=None, ignore_files=None):
         dirs[:] = [d for d in dirs if d not in ignore_dirs]
         files = [f for f in files if f not in ignore_files]
 
-        # Calculate current level
+        # Calculate current hierarchy level
         relative_path = os.path.relpath(root, startpath)
         level = len(relative_path.split(os.sep)) if relative_path != '.' else 0
 
@@ -53,7 +56,7 @@ def generate_tree(startpath, ignore_dirs=None, ignore_files=None):
                 grandparent = dir_hierarchy[current_path]['parent']
                 current_dir_name = os.path.basename(current_path)
 
-                # Show vertical line if not the last subdirectory of ancestor directory
+                # Display vertical line if not the last subdirectory of ancestor directory
                 if grandparent in dir_hierarchy and dir_hierarchy[grandparent]['dirs'] and current_dir_name != \
                         dir_hierarchy[grandparent]['dirs'][-1]:
                     indent_segments.insert(0, "│   ")
@@ -91,10 +94,13 @@ def generate_tree(startpath, ignore_dirs=None, ignore_files=None):
 
             # Process each file, determine if it's the last item
             for i, file in enumerate(sorted(files)):
-                # Check if it's the last file with no more subdirectories
+                # Check if it's the last file and there are no more subdirectories
                 is_last_item = (i == len(files) - 1) and (len(dirs) == 0)
                 connector = "└── " if is_last_item else "├── "
                 output.append(f"{file_indent}{connector}{file}")
+
+    # Add closing Markdown code block tag
+    output.append("```")
 
     # Write to file
     with open("projectStructure.md", "w", encoding="utf-8") as f:

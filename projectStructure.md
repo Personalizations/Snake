@@ -1,3 +1,4 @@
+```
 Snakes/
 ├── CHANGELOG.md
 ├── CONTRIBUTING.md
@@ -51,3 +52,4 @@ Snakes/
         ├── menu_controls.py
         ├── options.py
         └── start_game.py
+```
