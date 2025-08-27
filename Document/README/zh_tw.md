@@ -50,7 +50,7 @@
 
 ## 專案結構
 
-[點此跳轉](../../projectStructure.md
+[點此跳轉](../../projectStructure.md)
 
 ## 貢獻
 
