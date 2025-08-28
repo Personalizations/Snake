@@ -1,3 +1,20 @@
+### 2.1
+
+- The last item's connector line was not correctly displayed as └──.
+ Improvements:
+ - A two-pass traversal strategy is now used, first collecting all directory information and then generating the directory tree.
+ - Improved indentation logic to more accurately calculate connector lines at each level.
+ - Correctly use the └── symbol for the last subdirectory and last file in each directory.
+ - Fixed an issue with connector line display for deep directories.
+
+- the generated directory tree will have the correct hierarchical relationships and connecting lines
+
+ - improved hierarchy calculation to more accurately determine directory depth using relative paths
+ - use the "└──" symbol for the last file/directory and "├──" for others, making the structure clearer
+ - optimized indentation logic to ensure proper alignment of connecting lines
+ - fix an issue with root directory display
+
+
 ### 2.0
 
 - fix the issue that the Traditional Chinese version of the README document could not be redirected
