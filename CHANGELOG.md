@@ -1,3 +1,15 @@
+### 2.2
+
+- perfectly handles multi-level nested directories, maintaining clear visual relationships even in very deep hierarchical structures. Connecting lines will accurately run through each level, m…
+…aking the entire directory tree more readable
+
+- directory trees now have clearer hierarchical relationships and correct connecting lines.
+ - more accurate hierarchy calculation and indentation generation logic
+ - properly distinguish between the last item in each directory (using └──) and other items (using ├──)
+ - optimized the display of connecting lines for deep directories
+ - ensured that connecting lines between parent and child directories are correctly aligned
+
+
 ### 2.1
 
 - The last item's connector line was not correctly displayed as └──.
