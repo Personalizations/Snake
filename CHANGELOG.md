@@ -1,3 +1,8 @@
+### 2.3
+
+- fix file name issues in project structure
+- add a new Markdown code block tag to make it respond to typesetting in real time
+
 ### 2.2
 
 - perfectly handles multi-level nested directories, maintaining clear visual relationships even in very deep hierarchical structures. Connecting lines will accurately run through each level, m…
