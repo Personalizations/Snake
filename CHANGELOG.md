@@ -1,3 +1,12 @@
+### 1.9
+
+- optimize the multi-language jump display of the project structure --- Simplified Chinese
+- fix：optimize the multi-language jump display of the project structure --- Traditional Chinese
+- optimize the multi-language jump display of the project structure --- Traditional Chinese
+- optimize the multi-language jump display of the project structure --- Japanese
+- optimize the display of project structure. previously, tree.py was added to generate the structure.
+- generate a structure tree
+
 ### 1.8
 
 - fix file code format
