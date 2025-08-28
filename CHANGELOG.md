@@ -1,3 +1,8 @@
+### 2.0
+
+- fix the issue that the Traditional Chinese version of the README document could not be redirected
+- fix the multi-language translation issue of README document
+
 ### 1.9
 
 - optimize the multi-language jump display of the project structure --- Simplified Chinese
