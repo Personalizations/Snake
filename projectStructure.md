@@ -1,5 +1,5 @@
 ```
-Snake/
+Snakes/
 ├── CHANGELOG.md
 ├── CONTRIBUTING.md
 ├── LICENSE
@@ -8,16 +8,6 @@ Snake/
 ├── projectStructure.md
 ├── requirements.txt
 ├── tree.py
-├── .idea/
-│   ├── Snake.iml
-│   ├── jsLibraryMappings.xml
-│   ├── misc.xml
-│   ├── modules.xml
-│   ├── vcs.xml
-│   ├── workspace.xml
-│   └── inspectionProfiles/
-│       ├── Project_Default.xml
-│       └── profiles_settings.xml
 ├── Assets/
 │   ├── index.html
 │   ├── audio/
@@ -46,7 +36,10 @@ Snake/
 │       └── zh_tw.md
 └── Function/
     ├── game/
-    │   └── game_core.py
+    │   ├── challenge_selector.py
+    │   ├── game_core.py
+    │   ├── infinite_challenge.py
+    │   └── level_challenge.py
     └── home_menu/
         ├── exit_game.py
         ├── menu_controls.py
