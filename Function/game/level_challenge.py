@@ -29,7 +29,7 @@ class LevelChallenge:
             "Easy": [100 + i * 50 for i in range(20)],
             "Normal": [200 + i * 150 for i in range(20)],
             "Hard": [400 + i * 350 for i in range(20)],
-            "Nightmare": [900 + i * 150 for i in range(20)]
+            "Nightmare": [900 + i * 150 for i in range(20)],
         }
 
         # Length increase configuration
@@ -37,7 +37,7 @@ class LevelChallenge:
             "Easy": 1.5,
             "Normal": 1.25,
             "Hard": 0.75,
-            "Nightmare": 0.25
+            "Nightmare": 0.25,
         }
 
         # Bomb effect configuration
@@ -45,7 +45,7 @@ class LevelChallenge:
             "Easy": 0,  # No bombs
             "Normal": 0,  # No bombs
             "Hard": 0.5,  # Reduce length by 50%
-            "Nightmare": 0.75  # Reduce length by 75%
+            "Nightmare": 0.75,  # Reduce length by 75%
         }
 
         # Wall effect configuration
@@ -53,7 +53,7 @@ class LevelChallenge:
             "Easy": False,  # Not killed by walls
             "Normal": 0.3,  # 30% chance of being killed by walls
             "Hard": True,  # Killed by walls
-            "Nightmare": True  # Killed by walls
+            "Nightmare": True,  # Killed by walls
         }
 
     def get_system_info(self):
@@ -84,14 +84,20 @@ class LevelChallenge:
             elif event.type == pygame.KEYDOWN:
                 if self.in_menu:
                     if event.key == pygame.K_UP:
-                        self.selected_difficulty = (self.selected_difficulty - 1) % len(self.difficulties)
+                        self.selected_difficulty = (self.selected_difficulty - 1) % len(
+                            self.difficulties
+                        )
                     elif event.key == pygame.K_DOWN:
-                        self.selected_difficulty = (self.selected_difficulty + 1) % len(self.difficulties)
+                        self.selected_difficulty = (self.selected_difficulty + 1) % len(
+                            self.difficulties
+                        )
                     elif event.key == pygame.K_RETURN:
                         if self.selected_difficulty == 4:  # Back
                             self.running = False
                         else:
-                            self.start_challenge(self.difficulties[self.selected_difficulty])
+                            self.start_challenge(
+                                self.difficulties[self.selected_difficulty]
+                            )
                     elif event.key == pygame.K_ESCAPE:
                         self.running = False
                 else:
@@ -125,7 +131,7 @@ class LevelChallenge:
         """Handle logic when bomb is hit"""
         effect = self.bomb_effects[self.current_difficulty]
         if effect > 0:
-            self.snake_length *= (1 - effect)
+            self.snake_length *= 1 - effect
             if self.snake_length < 1:
                 self.snake_length = 1
 
@@ -137,22 +143,37 @@ class LevelChallenge:
             self.screen.blit(title, (self.width // 2 - title.get_width() // 2, 100))
 
             for i, difficulty in enumerate(self.difficulties):
-                color = (255, 255, 255) if i == self.selected_difficulty else (100, 100, 100)
+                color = (
+                    (255, 255, 255)
+                    if i == self.selected_difficulty
+                    else (100, 100, 100)
+                )
                 text = self.small_font.render(difficulty, True, color)
-                self.screen.blit(text, (self.width // 2 - text.get_width() // 2, 200 + i * 50))
+                self.screen.blit(
+                    text, (self.width // 2 - text.get_width() // 2, 200 + i * 50)
+                )
         else:
             # Render game interface
-            title = self.font.render(f"{self.current_difficulty} - Level {self.current_level}", True, (0, 255, 0))
+            title = self.font.render(
+                f"{self.current_difficulty} - Level {self.current_level}",
+                True,
+                (0, 255, 0),
+            )
             self.screen.blit(title, (self.width // 2 - title.get_width() // 2, 30))
 
             # Display current length and goal
             goal = self.level_goals[self.current_difficulty][self.current_level - 1]
-            info = self.small_font.render(f"Current Length: {self.snake_length:.1f} / Goal: {goal}", True,
-                                          (255, 255, 255))
+            info = self.small_font.render(
+                f"Current Length: {self.snake_length:.1f} / Goal: {goal}",
+                True,
+                (255, 255, 255),
+            )
             self.screen.blit(info, (50, 50))
 
             # Display control hint
-            hint = self.small_font.render("Press ESC to return to menu", True, (100, 100, 100))
+            hint = self.small_font.render(
+                "Press ESC to return to menu", True, (100, 100, 100)
+            )
             self.screen.blit(hint, (self.width - 200, self.height - 50))
 
         pygame.display.flip()

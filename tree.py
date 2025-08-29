@@ -24,9 +24,9 @@ def generate_tree(startpath, ignore_dirs=None, ignore_files=None):
         dirs[:] = [d for d in dirs if d not in ignore_dirs]
         files = [f for f in files if f not in ignore_files]
         dir_hierarchy[root] = {
-            'dirs': dirs.copy(),
-            'files': files.copy(),
-            'parent': os.path.dirname(root)
+            "dirs": dirs.copy(),
+            "files": files.copy(),
+            "parent": os.path.dirname(root),
         }
 
     # Generate directory tree
@@ -36,16 +36,19 @@ def generate_tree(startpath, ignore_dirs=None, ignore_files=None):
 
         # Calculate current hierarchy level
         relative_path = os.path.relpath(root, startpath)
-        level = len(relative_path.split(os.sep)) if relative_path != '.' else 0
+        level = len(relative_path.split(os.sep)) if relative_path != "." else 0
 
         # Process subdirectories (excluding root directory)
         if level > 0:
             dir_name = os.path.basename(root)
-            parent_dir = dir_hierarchy[root]['parent']
+            parent_dir = dir_hierarchy[root]["parent"]
 
             # Determine if it's the last subdirectory of the parent directory
-            is_last_dir = dir_name == dir_hierarchy[parent_dir]['dirs'][-1] if dir_hierarchy[parent_dir][
-                'dirs'] else False
+            is_last_dir = (
+                dir_name == dir_hierarchy[parent_dir]["dirs"][-1]
+                if dir_hierarchy[parent_dir]["dirs"]
+                else False
+            )
 
             # Build indentation - accurately calculate connecting lines for each level
             indent_segments = []
@@ -53,12 +56,15 @@ def generate_tree(startpath, ignore_dirs=None, ignore_files=None):
             current_level = level - 1
 
             while current_level > 0:
-                grandparent = dir_hierarchy[current_path]['parent']
+                grandparent = dir_hierarchy[current_path]["parent"]
                 current_dir_name = os.path.basename(current_path)
 
                 # Display vertical line if not the last subdirectory of ancestor directory
-                if grandparent in dir_hierarchy and dir_hierarchy[grandparent]['dirs'] and current_dir_name != \
-                        dir_hierarchy[grandparent]['dirs'][-1]:
+                if (
+                    grandparent in dir_hierarchy
+                    and dir_hierarchy[grandparent]["dirs"]
+                    and current_dir_name != dir_hierarchy[grandparent]["dirs"][-1]
+                ):
                     indent_segments.insert(0, "│   ")
                 else:
                     indent_segments.insert(0, "    ")
@@ -66,7 +72,7 @@ def generate_tree(startpath, ignore_dirs=None, ignore_files=None):
                 current_path = grandparent
                 current_level -= 1
 
-            indent = ''.join(indent_segments)
+            indent = "".join(indent_segments)
             connector = "└── " if is_last_dir else "├── "
             output.append(f"{indent}{connector}{dir_name}/")
 
@@ -78,11 +84,14 @@ def generate_tree(startpath, ignore_dirs=None, ignore_files=None):
             current_level = level
 
             while current_level > 0:
-                parent = dir_hierarchy[current_path]['parent']
+                parent = dir_hierarchy[current_path]["parent"]
                 current_dir_name = os.path.basename(current_path)
 
-                if parent in dir_hierarchy and dir_hierarchy[parent]['dirs'] and current_dir_name != \
-                        dir_hierarchy[parent]['dirs'][-1]:
+                if (
+                    parent in dir_hierarchy
+                    and dir_hierarchy[parent]["dirs"]
+                    and current_dir_name != dir_hierarchy[parent]["dirs"][-1]
+                ):
                     file_indent_segments.insert(0, "│   ")
                 else:
                     file_indent_segments.insert(0, "    ")
@@ -90,7 +99,7 @@ def generate_tree(startpath, ignore_dirs=None, ignore_files=None):
                 current_path = parent
                 current_level -= 1
 
-            file_indent = ''.join(file_indent_segments)
+            file_indent = "".join(file_indent_segments)
 
             # Process each file, determine if it's the last item
             for i, file in enumerate(sorted(files)):

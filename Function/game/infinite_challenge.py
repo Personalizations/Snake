@@ -47,12 +47,14 @@ class InfiniteChallenge:
             "10 Minutes": "10_minutes.txt",
             "20 Minutes": "20_minutes.txt",
             "30 Minutes": "30_minutes.txt",
-            "1 Hour": "1_hour.txt"
+            "1 Hour": "1_hour.txt",
         }
 
         filename = f"Fraction/Infinite Challenge/Limited time/{file_map[time_option]}"
         with open(filename, "a", encoding="utf-8") as f:
-            f.write(f"{timestamp} {computer_name} {user_name} {int(self.snake_length)}\n")
+            f.write(
+                f"{timestamp} {computer_name} {user_name} {int(self.snake_length)}\n"
+            )
 
     def record_unlimited_time_data(self):
         """Record data for unlimited time mode"""
@@ -61,7 +63,9 @@ class InfiniteChallenge:
 
         filename = "Fraction/Infinite Challenge/Unlimited time/limitless.txt"
         with open(filename, "a", encoding="utf-8") as f:
-            f.write(f"{timestamp} {computer_name} {user_name} {int(self.snake_length)}\n")
+            f.write(
+                f"{timestamp} {computer_name} {user_name} {int(self.snake_length)}\n"
+            )
 
     def handle_events(self):
         for event in pygame.event.get():
@@ -71,9 +75,13 @@ class InfiniteChallenge:
             elif event.type == pygame.KEYDOWN:
                 if self.in_main_menu:
                     if event.key == pygame.K_UP:
-                        self.selected_option = (self.selected_option - 1) % len(self.options)
+                        self.selected_option = (self.selected_option - 1) % len(
+                            self.options
+                        )
                     elif event.key == pygame.K_DOWN:
-                        self.selected_option = (self.selected_option + 1) % len(self.options)
+                        self.selected_option = (self.selected_option + 1) % len(
+                            self.options
+                        )
                     elif event.key == pygame.K_RETURN:
                         if self.selected_option == 0:  # Limited Time
                             self.in_main_menu = False
@@ -86,9 +94,13 @@ class InfiniteChallenge:
                         self.running = False
                 elif self.in_time_menu:
                     if event.key == pygame.K_UP:
-                        self.selected_time = (self.selected_time - 1) % len(self.time_options)
+                        self.selected_time = (self.selected_time - 1) % len(
+                            self.time_options
+                        )
                     elif event.key == pygame.K_DOWN:
-                        self.selected_time = (self.selected_time + 1) % len(self.time_options)
+                        self.selected_time = (self.selected_time + 1) % len(
+                            self.time_options
+                        )
                     elif event.key == pygame.K_RETURN:
                         if self.selected_time == 4:  # Back
                             self.in_time_menu = False
@@ -122,7 +134,7 @@ class InfiniteChallenge:
             "10 Minutes": 600,
             "20 Minutes": 1200,
             "30 Minutes": 1800,
-            "1 Hour": 3600
+            "1 Hour": 3600,
         }
         self.time_limit = time_map[time_option]
         self.start_time = time.time()
@@ -170,13 +182,19 @@ class InfiniteChallenge:
         self.screen.fill((0, 0, 0))
 
         if self.in_main_menu:
-            title = self.font.render("Select Infinite Challenge Mode", True, (0, 255, 0))
+            title = self.font.render(
+                "Select Infinite Challenge Mode", True, (0, 255, 0)
+            )
             self.screen.blit(title, (self.width // 2 - title.get_width() // 2, 100))
 
             for i, option in enumerate(self.options):
-                color = (255, 255, 255) if i == self.selected_option else (100, 100, 100)
+                color = (
+                    (255, 255, 255) if i == self.selected_option else (100, 100, 100)
+                )
                 text = self.small_font.render(option, True, color)
-                self.screen.blit(text, (self.width // 2 - text.get_width() // 2, 200 + i * 50))
+                self.screen.blit(
+                    text, (self.width // 2 - text.get_width() // 2, 200 + i * 50)
+                )
         elif self.in_time_menu:
             title = self.font.render("Select Time Limit", True, (0, 255, 0))
             self.screen.blit(title, (self.width // 2 - title.get_width() // 2, 100))
@@ -184,16 +202,21 @@ class InfiniteChallenge:
             for i, time_opt in enumerate(self.time_options):
                 color = (255, 255, 255) if i == self.selected_time else (100, 100, 100)
                 text = self.small_font.render(time_opt, True, color)
-                self.screen.blit(text, (self.width // 2 - text.get_width() // 2, 200 + i * 50))
+                self.screen.blit(
+                    text, (self.width // 2 - text.get_width() // 2, 200 + i * 50)
+                )
         elif self.in_game:
             # Render game interface
             if self.current_mode == "limited":
-                title = self.font.render(f"Limited Time: {self.time_option}", True, (0, 255, 0))
+                title = self.font.render(
+                    f"Limited Time: {self.time_option}", True, (0, 255, 0)
+                )
                 elapsed = time.time() - self.start_time
                 remaining = max(0, self.time_limit - elapsed)
                 time_text = self.small_font.render(
                     f"Time Remaining: {int(remaining // 60)}m{int(remaining % 60)}s",
-                    True, (255, 255, 255)
+                    True,
+                    (255, 255, 255),
                 )
                 self.screen.blit(time_text, (50, 80))
             else:
@@ -201,18 +224,23 @@ class InfiniteChallenge:
                 elapsed = time.time() - self.start_time
                 time_text = self.small_font.render(
                     f"Time Elapsed: {int(elapsed // 60)}m{int(elapsed % 60)}s",
-                    True, (255, 255, 255)
+                    True,
+                    (255, 255, 255),
                 )
                 self.screen.blit(time_text, (50, 80))
 
             self.screen.blit(title, (self.width // 2 - title.get_width() // 2, 30))
 
             # Display current length
-            length_text = self.small_font.render(f"Current Length: {int(self.snake_length)}", True, (255, 255, 255))
+            length_text = self.small_font.render(
+                f"Current Length: {int(self.snake_length)}", True, (255, 255, 255)
+            )
             self.screen.blit(length_text, (50, 50))
 
             # Display control hint
-            hint = self.small_font.render("Press ESC to end and save score", True, (100, 100, 100))
+            hint = self.small_font.render(
+                "Press ESC to end and save score", True, (100, 100, 100)
+            )
             self.screen.blit(hint, (self.width - 250, self.height - 50))
 
         pygame.display.flip()

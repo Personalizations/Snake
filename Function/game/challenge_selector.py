@@ -3,6 +3,7 @@ import sys
 from Function.game.level_challenge import LevelChallenge
 from Function.game.infinite_challenge import InfiniteChallenge
 
+
 class ChallengeSelector:
     def __init__(self, screen):
         self.screen = screen
@@ -20,9 +21,13 @@ class ChallengeSelector:
                 sys.exit()
             elif event.type == pygame.KEYDOWN:
                 if event.key == pygame.K_UP:
-                    self.selected_option = (self.selected_option - 1) % len(self.options)
+                    self.selected_option = (self.selected_option - 1) % len(
+                        self.options
+                    )
                 elif event.key == pygame.K_DOWN:
-                    self.selected_option = (self.selected_option + 1) % len(self.options)
+                    self.selected_option = (self.selected_option + 1) % len(
+                        self.options
+                    )
                 elif event.key == pygame.K_RETURN:
                     self.select_option()
                 elif event.key == pygame.K_ESCAPE:
@@ -49,7 +54,9 @@ class ChallengeSelector:
         for i, option in enumerate(self.options):
             color = (255, 255, 255) if i == self.selected_option else (100, 100, 100)
             text = self.small_font.render(option, True, color)
-            self.screen.blit(text, (self.width // 2 - text.get_width() // 2, 200 + i * 50))
+            self.screen.blit(
+                text, (self.width // 2 - text.get_width() // 2, 200 + i * 50)
+            )
 
         pygame.display.flip()
 
