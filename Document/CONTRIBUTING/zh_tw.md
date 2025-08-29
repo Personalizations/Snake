@@ -57,7 +57,7 @@ pip install black
 
 ### 格式化程式碼
 ```
-black.
+black .
 ```
 
 2. Lint 檢查（如果使用 flake8 等工具）：
@@ -69,7 +69,7 @@ pip install flake8
 
 ### 運行 Lint 檢查
 ```
-flake8.
+flake8 .
 ```
 
 完成更改後：
