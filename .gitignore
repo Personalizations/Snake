@@ -15,6 +15,7 @@ downloads/
 eggs/
 .eggs/
 .idea/
+Fraction/
 lib/
 lib64/
 parts/
