@@ -6,7 +6,7 @@ def generate_tree(startpath, ignore_dirs=None, ignore_files=None):
     Generate project directory tree with enhanced deep structure visualization
     """
     if ignore_dirs is None:
-        ignore_dirs = [".git", "__pycache__", "venv"]
+        ignore_dirs = [".git", "__pycache__", "venv", "Fraction"]
     if ignore_files is None:
         ignore_files = [".gitignore", ".DS_Store"]
 
