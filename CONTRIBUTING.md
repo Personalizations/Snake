@@ -65,27 +65,11 @@ It's recommended to check code style and quality before committing:
 
 1. Code style formatting (if using tools like black):
 
-### Install black if not already installed
-
-```
-pip install black
-```
-
-### Format the code
-
 ```
 black .
 ```
 
 2. Lint checking (if using tools like flake8):
-
-
-### Install flake8 if not already installed
-
-```
-pip install flake8
-```
-### Run lint check
 
 ```
 flake8 .

@@ -50,24 +50,12 @@ python main.py
 
 1. 程式碼樣式格式化（如果使用 black 等工具）：
 
-### 若尚未安裝 black，請安裝
-```
-pip install black
-```
-
-### 格式化程式碼
 ```
 black .
 ```
 
 2. Lint 檢查（如果使用 flake8 等工具）：
 
-### 如果尚未安裝 flake8，請安裝
-```
-pip install flake8
-```
-
-### 運行 Lint 檢查
 ```
 flake8 .
 ```

@@ -51,25 +51,12 @@ python main.py
 
 1. 代码样式格式化（如果使用 black 等工具）：
 
-### 如果尚未安装 black，请安装
-```
-pip install black
-```
-
-### 格式化代码
-
 ```
 black .
 ```
 
 2. Lint 检查（如果使用 flake8 等工具）：
 
-### 如果尚未安装 flake8，请安装
-```
-pip install flake8
-```
-
-### 运行 Lint 检查
 ```
 flake8 .
 ```
