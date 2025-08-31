@@ -36,31 +36,29 @@
 
 ### 2.2
 
-- perfectly handles multi-level nested directories, maintaining clear visual relationships even in very deep hierarchical structures. Connecting lines will accurately run through each level, m…
-…aking the entire directory tree more readable
+- perfectly handles multi-level nested directories, maintaining clear visual relationships even in very deep hierarchical structures. Connecting lines will accurately run through each level, making the entire directory tree more readable
 
 - directory trees now have clearer hierarchical relationships and correct connecting lines.
- - more accurate hierarchy calculation and indentation generation logic
- - properly distinguish between the last item in each directory (using └──) and other items (using ├──)
- - optimized the display of connecting lines for deep directories
- - ensured that connecting lines between parent and child directories are correctly aligned
+  - more accurate hierarchy calculation and indentation generation logic
+  - properly distinguish between the last item in each directory (using └──) and other items (using ├──)
+  - optimized the display of connecting lines for deep directories
+  - ensured that connecting lines between parent and child directories are correctly aligned
 
 
 ### 2.1
 
 - The last item's connector line was not correctly displayed as └──.
  Improvements:
- - A two-pass traversal strategy is now used, first collecting all directory information and then generating the directory tree.
- - Improved indentation logic to more accurately calculate connector lines at each level.
- - Correctly use the └── symbol for the last subdirectory and last file in each directory.
- - Fixed an issue with connector line display for deep directories.
+  - A two-pass traversal strategy is now used, first collecting all directory information and then generating the directory tree.
+  - Improved indentation logic to more accurately calculate connector lines at each level.
+  - Correctly use the └── symbol for the last subdirectory and last file in each directory.
+  - Fixed an issue with connector line display for deep directories.
 
 - the generated directory tree will have the correct hierarchical relationships and connecting lines
-
- - improved hierarchy calculation to more accurately determine directory depth using relative paths
- - use the "└──" symbol for the last file/directory and "├──" for others, making the structure clearer
- - optimized indentation logic to ensure proper alignment of connecting lines
- - fix an issue with root directory display
+  - improved hierarchy calculation to more accurately determine directory depth using relative paths
+  - use the "└──" symbol for the last file/directory and "├──" for others, making the structure clearer
+  - optimized indentation logic to ensure proper alignment of connecting lines
+  - fix an issue with root directory display
 
 
 ### 2.0
