@@ -1,3 +1,19 @@
+### 2.5
+
+- use black. to format file code
+  - reformatted C:\Users\Administrator\Documents\GitHub\Snakes\Function\home_menu\start_game.py
+  - reformatted C:\Users\Administrator\Documents\GitHub\Snakes\Function\game\challenge_selector.py
+  - reformatted C:\Users\Administrator\Documents\GitHub\Snakes\tree.py
+  - reformatted C:\Users\Administrator\Documents\GitHub\Snakes\Function\game\level_challenge.py
+  - reformatted C:\Users\Administrator\Documents\GitHub\Snakes\Function\game\infinite_challenge.py
+
+  - All done! ✨ 🍰 ✨
+  - 5 files reformatted, 5 files left unchanged.
+
+- add Fraction folder filtering to the generated architecture directory
+- add filtering for Fraction folders
+- add filtering for .idea folders
+
 ### 2.4
 
 - modify start_game.py to lead to the challenge selection interface
