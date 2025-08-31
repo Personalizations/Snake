@@ -1,3 +1,11 @@
+### 2.6
+
+- fix the error in formatting the contribution file code
+- delete .idea directory
+- generate the latest tree
+- add filtering for .idea folders to the structure generation script
+- updated dependency to platformdirs v4.4.0
+
 ### 2.5
 
 - use black. to format file code
