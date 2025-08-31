@@ -1,3 +1,10 @@
+### 2.4
+
+- modify start_game.py to lead to the challenge selection interface
+- creat Infinite Challenge mode file
+- creat a level challenge mode file
+- creat a challenge mode selection screen
+
 ### 2.3
 
 - fix file name issues in project structure
