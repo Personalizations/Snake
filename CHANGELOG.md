@@ -1,3 +1,13 @@
+### 2.7
+
+- fix the issue where limited challenges above difficult level could not spawn bombs
+- fix the problem that limited challenge cannot display the snake page. In level_challenge.py, guide game_core.py and add the missing components of game_core.py.
+- Revert "- fix the issue that limited challenge cannot display the Snake page"
+- fix the issue that limited challenge cannot display the Snake page
+- remove pre-installation of formatting code for contributed documentation
+- simplify the python library needs to be pre
+- fix the update log format error
+
 ### 2.6
 
 - fix the error in formatting the contribution file code
