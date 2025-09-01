@@ -19,6 +19,7 @@ WHITE = (255, 255, 255)
 GREEN = (0, 255, 0)  # Snake body
 DARK_GREEN = (0, 200, 0)  # Snake head
 RED = (255, 0, 0)  # Food
+BLUE = (0, 0, 255)  # Bomb
 
 # Direction constants
 UP = (0, -1)
