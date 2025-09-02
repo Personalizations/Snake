@@ -1,6 +1,5 @@
 import pygame
 import random
-import sys
 from pygame import mixer
 
 # Initialize Pygame and audio system

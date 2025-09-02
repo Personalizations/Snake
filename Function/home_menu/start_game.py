@@ -1,5 +1,3 @@
-# Function/start_game.py
-
 import pygame
 from Function.game.challenge_selector import ChallengeSelector
 

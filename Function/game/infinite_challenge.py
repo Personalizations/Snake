@@ -1,6 +1,5 @@
 import pygame
 import sys
-import os
 import platform
 import getpass
 from datetime import datetime
