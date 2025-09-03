@@ -1,11 +1,9 @@
-import pygame
 import sys
 import platform
 import getpass
 from datetime import datetime
 from pathlib import Path
 import time
-import random
 from Function.game.game_core import *  # Import game core components
 
 # Ensure directories exist
