@@ -32,6 +32,9 @@ class LevelChallenge:
         self.bg_music = BackgroundMusic("Assets/audio/background/background_music.wav")
         self.bg_music.load()
 
+        # Initialize sound effects
+        self.sounds = GameSounds()
+
         # Level goal configuration
         self.level_goals = {
             "Easy": [100 + i * 50 for i in range(20)],
@@ -106,6 +109,9 @@ class LevelChallenge:
     def handle_food_eaten(self):
         """Handle food consumption logic (overridden)"""
         if self.snake[0] == self.food:
+            # Play eat sound effect
+            self.sounds.play_eat()
+
             multiplier = self.length_multipliers[self.current_difficulty]
             self.snake_length += multiplier
             self.food = generate_food(self.snake)
@@ -227,8 +233,9 @@ class LevelChallenge:
                         self.in_menu = True
                         self.bg_music.stop()
 
-                # Check game failure
+                # Check game failure and play crash sound
                 if self.check_collisions():
+                    self.sounds.play_crash()  # Play death sound effect
                     self.record_data(self.current_difficulty, self.current_level, False)
                     self.in_menu = True
                     self.bg_music.stop()
@@ -236,13 +243,14 @@ class LevelChallenge:
             self.render()
             clock.tick(self.fps if not self.in_menu else 30)
 
-    # Other methods remain unchanged...
     def get_system_info(self):
+        """Get system information including computer and user name"""
         computer_name = platform.node()
         user_name = getpass.getuser()
         return computer_name, user_name
 
     def record_data(self, difficulty, level, success):
+        """Record game data including timestamp, system info, level and status"""
         computer_name, user_name = self.get_system_info()
         timestamp = datetime.now().strftime("%Y/%m/%d %H:%M:%S")
         status = "Completed" if success else "Failed"
@@ -251,4 +259,5 @@ class LevelChallenge:
             f.write(f"{timestamp} {computer_name} {user_name} Level {level} {status}\n")
 
     def check_level_complete(self, difficulty):
+        """Check if current level is completed by comparing snake length with goal"""
         return self.snake_length >= self.level_goals[difficulty][self.current_level - 1]
