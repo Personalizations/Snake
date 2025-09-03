@@ -13,6 +13,9 @@ Snakes/
 │   ├── audio/
 │   │   ├── background/
 │   │   │   └── background_music.wav
+│   │   ├── effects/
+│   │   │   ├── crash.wav
+│   │   │   └── eat.wav
 │   │   └── home_menu/
 │   │       ├── background_music.wav
 │   │       ├── confirm.wav
