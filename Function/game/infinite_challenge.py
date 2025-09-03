@@ -6,13 +6,7 @@ from datetime import datetime
 from pathlib import Path
 import time
 import random
-from Function.game.game_core import (
-    generate_food, draw_snake, draw_food, draw_score,
-    BackgroundMusic, GameSounds,
-    GRID_SIZE, GRID_WIDTH, GRID_HEIGHT,
-    BLACK, GREEN, BLUE,
-    UP, DOWN, LEFT, RIGHT
-)
+from Function.game.game_core import *  # Import game core components
 
 # Ensure directories exist
 Path("Fraction/Infinite Challenge/Limited time").mkdir(parents=True, exist_ok=True)
