@@ -1,3 +1,14 @@
+### 2.8
+
+- add eating and death sound effects to the limited challenge guide
+- remove unnecessary pre-libraries for Infinite Challenge
+- simplify the game core library of infinite challenge guide
+- synchronize the latest project structure tree
+- fix the issue where the game could not be started in Infinite Challenge, and added eating sound effects and death sound effects
+- add death sound effects
+- add eating sound effects
+- remove unnecessary pre-libraries
+
 ### 2.7
 
 - fix the issue where limited challenges above difficult level could not spawn bombs
