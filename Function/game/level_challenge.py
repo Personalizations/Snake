@@ -45,13 +45,17 @@ class LevelChallenge:
 
         # Other configurations remain unchanged...
         self.length_multipliers = {
-            "Easy": 1.5, "Normal": 1.25, "Hard": 0.75, "Nightmare": 0.25
+            "Easy": 1.5,
+            "Normal": 1.25,
+            "Hard": 0.75,
+            "Nightmare": 0.25,
         }
-        self.bomb_effects = {
-            "Easy": 0, "Normal": 0, "Hard": 0.5, "Nightmare": 0.75
-        }
+        self.bomb_effects = {"Easy": 0, "Normal": 0, "Hard": 0.5, "Nightmare": 0.75}
         self.wall_effects = {
-            "Easy": False, "Normal": 0.3, "Hard": True, "Nightmare": True
+            "Easy": False,
+            "Normal": 0.3,
+            "Hard": True,
+            "Nightmare": True,
         }
 
     def init_game_state(self):
@@ -86,8 +90,12 @@ class LevelChallenge:
 
         # Wall collision
         if self.wall_effects[self.current_difficulty]:
-            if (head[0] < 0 or head[0] >= GRID_WIDTH or
-                    head[1] < 0 or head[1] >= GRID_HEIGHT):
+            if (
+                head[0] < 0
+                or head[0] >= GRID_WIDTH
+                or head[1] < 0
+                or head[1] >= GRID_HEIGHT
+            ):
                 return True
         elif random.random() < self.wall_effects[self.current_difficulty]:
             return True
@@ -124,8 +132,8 @@ class LevelChallenge:
         """Handle bomb collision (overridden)"""
         if self.snake[0] == self.bomb and self.bomb:
             effect = self.bomb_effects[self.current_difficulty]
-            self.snake_length *= (1 - effect)
-            self.snake = self.snake[:max(1, int(len(self.snake) * (1 - effect)))]
+            self.snake_length *= 1 - effect
+            self.snake = self.snake[: max(1, int(len(self.snake) * (1 - effect)))]
             self.generate_bomb()
             if self.snake_length < 1:
                 self.snake_length = 1
@@ -148,14 +156,20 @@ class LevelChallenge:
                 if self.in_menu:
                     # Menu controls remain unchanged...
                     if event.key == pygame.K_UP:
-                        self.selected_difficulty = (self.selected_difficulty - 1) % len(self.difficulties)
+                        self.selected_difficulty = (self.selected_difficulty - 1) % len(
+                            self.difficulties
+                        )
                     elif event.key == pygame.K_DOWN:
-                        self.selected_difficulty = (self.selected_difficulty + 1) % len(self.difficulties)
+                        self.selected_difficulty = (self.selected_difficulty + 1) % len(
+                            self.difficulties
+                        )
                     elif event.key == pygame.K_RETURN:
                         if self.selected_difficulty == 4:  # Back
                             self.running = False
                         else:
-                            self.start_challenge(self.difficulties[self.selected_difficulty])
+                            self.start_challenge(
+                                self.difficulties[self.selected_difficulty]
+                            )
                     elif event.key == pygame.K_ESCAPE:
                         self.running = False
                 else:
@@ -182,13 +196,21 @@ class LevelChallenge:
             title = self.font.render("Select Difficulty", True, (0, 255, 0))
             self.screen.blit(title, (self.width // 2 - title.get_width() // 2, 100))
             for i, difficulty in enumerate(self.difficulties):
-                color = (255, 255, 255) if i == self.selected_difficulty else (100, 100, 100)
+                color = (
+                    (255, 255, 255)
+                    if i == self.selected_difficulty
+                    else (100, 100, 100)
+                )
                 text = self.small_font.render(difficulty, True, color)
-                self.screen.blit(text, (self.width // 2 - text.get_width() // 2, 200 + i * 50))
+                self.screen.blit(
+                    text, (self.width // 2 - text.get_width() // 2, 200 + i * 50)
+                )
         else:
             # Game screen rendering
             title = self.font.render(
-                f"{self.current_difficulty} - Level {self.current_level}", True, (0, 255, 0)
+                f"{self.current_difficulty} - Level {self.current_level}",
+                True,
+                (0, 255, 0),
             )
             self.screen.blit(title, (self.width // 2 - title.get_width() // 2, 30))
 
@@ -197,16 +219,23 @@ class LevelChallenge:
             draw_food(self.screen, self.food)
             if self.bomb:  # Draw bomb (purple)
                 x, y = self.bomb
-                pygame.draw.rect(self.screen, (128, 0, 128),
-                                 (x * GRID_SIZE, y * GRID_SIZE, GRID_SIZE, GRID_SIZE))
+                pygame.draw.rect(
+                    self.screen,
+                    (128, 0, 128),
+                    (x * GRID_SIZE, y * GRID_SIZE, GRID_SIZE, GRID_SIZE),
+                )
 
             # Display information
             goal = self.level_goals[self.current_difficulty][self.current_level - 1]
             info = self.small_font.render(
-                f"Current Length: {self.snake_length:.1f} / Goal: {goal}", True, (255, 255, 255)
+                f"Current Length: {self.snake_length:.1f} / Goal: {goal}",
+                True,
+                (255, 255, 255),
             )
             self.screen.blit(info, (50, 50))
-            hint = self.small_font.render("Press ESC to return to menu", True, (100, 100, 100))
+            hint = self.small_font.render(
+                "Press ESC to return to menu", True, (100, 100, 100)
+            )
             self.screen.blit(hint, (self.width - 200, self.height - 50))
 
         pygame.display.flip()
