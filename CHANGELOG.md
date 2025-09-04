@@ -1,3 +1,9 @@
+### 2.9
+
+- remove flake8==7.3.0 pre-library
+- remove other contributed documentation lint checks
+- remove Contributed Documentation Lint Check
+
 ### 2.8
 
 - add eating and death sound effects to the limited challenge guide
