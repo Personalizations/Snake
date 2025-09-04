@@ -61,18 +61,10 @@ python main.py
 
 It's recommended to check code style and quality before committing:
 
-
-
-1. Code style formatting (if using tools like black):
+### Code style formatting (if using tools like black):
 
 ```
 black .
-```
-
-2. Lint checking (if using tools like flake8):
-
-```
-flake8 .
 ```
 
 Once you have made your changes:
