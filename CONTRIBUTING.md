@@ -28,10 +28,11 @@ Before you start contributing to the project, you need to set up your developmen
 First, clone the project repository to your local machine:
 
 
-
 ```
 git clone https://github.com/Personalizations/Snake.git
+```
 
+```
 cd snake
 ```
 
