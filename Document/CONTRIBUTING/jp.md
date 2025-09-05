@@ -22,7 +22,9 @@ Snakeへの貢献にご興味をお持ちいただきありがとうございま
 
 ```
 git clone https://github.com/Personalizations/Snake.git
+```
 
+```
 cd snake
 ```
 

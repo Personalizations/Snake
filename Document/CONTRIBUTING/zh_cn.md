@@ -22,7 +22,9 @@
 
 ```
 git clone https://github.com/Personalizations/Snake.git
+```
 
+```
 cd snake
 ```
 
