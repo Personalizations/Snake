@@ -1,5 +1,6 @@
 import pygame
 import sys
+from pygame import mixer
 from Function.game.level_challenge import LevelChallenge
 from Function.game.infinite_challenge import InfiniteChallenge
 
@@ -13,6 +14,18 @@ class ChallengeSelector:
         self.options = ["Level Challenge", "Infinite Challenge", "Return to Main Menu"]
         self.selected_option = 0
         self.running = True
+        self.bg_music = self.init_background_music()
+
+    def init_background_music(self):
+        try:
+            music_path = "Assets/audio/home_menu/background_music.wav"
+            mixer.music.load(music_path)
+            mixer.music.set_volume(0.3)
+            mixer.music.play(-1)
+            return True
+        except Exception as e:
+            print(f"Music loading failed on the challenge selection interface: {e}")
+            return False
 
     def handle_events(self):
         for event in pygame.event.get():
@@ -29,8 +42,10 @@ class ChallengeSelector:
                         self.options
                     )
                 elif event.key == pygame.K_RETURN:
+                    mixer.music.stop()
                     self.select_option()
                 elif event.key == pygame.K_ESCAPE:
+                    mixer.music.stop()
                     self.running = False
 
     def select_option(self):
@@ -66,3 +81,4 @@ class ChallengeSelector:
             self.handle_events()
             self.render()
             clock.tick(30)
+        mixer.music.stop()
