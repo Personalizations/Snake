@@ -1,7 +1,9 @@
 import sys
 import platform
 import getpass
+import traceback
 from datetime import datetime
+from operator import truediv
 from pathlib import Path
 import time
 from Function.game.game_core import *  # Import game core components
@@ -10,6 +12,16 @@ from Function.game.game_core import *  # Import game core components
 Path("Fraction/Infinite Challenge/Limited time").mkdir(parents=True, exist_ok=True)
 Path("Fraction/Infinite Challenge/Unlimited time").mkdir(parents=True, exist_ok=True)
 
+def init_background_music():
+    try:
+        music_path = "Assets/audio/home_menu/background_music.wav"
+        mixer.init()
+        mixer.music.load(music_path)
+        mixer.music.play()
+        return True
+    except Exception as e:
+        print(f"Music loading failed on the challenge selection interface: {e}")
+        return False
 
 class InfiniteChallenge:
     def __init__(self, screen):
@@ -22,6 +34,7 @@ class InfiniteChallenge:
         self.selected_option = 0
         self.selected_time = 0
         self.running = True
+        self.bg_music = init_background_music()
         self.in_main_menu = True
         self.in_time_menu = False
         self.in_game = False
